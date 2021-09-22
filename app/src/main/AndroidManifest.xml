@@ -11,10 +11,16 @@
         android:theme="@style/Theme.MAD_Group_Project">
 
         <activity
+            android:name=".Add_Card"
+            android:exported="true" />
+
+
+        <activity
             android:name=".Createreview"
             android:exported="true" />
 
         <activity android:name=".WishList"></activity>
+
 
         <activity android:name=".MainActivity">
             <intent-filter>
