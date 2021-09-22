@@ -1,0 +1,2 @@
+rootProject.name = "MAD_Group_Project"
+include ':app'
