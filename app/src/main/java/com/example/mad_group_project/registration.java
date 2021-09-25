@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class registration extends AppCompatActivity {
 
-    EditText name,email,pass,number,address;
+    EditText username, name,email,pass,number,address;
     TextView signin;
     Button btnReg;
 
@@ -42,7 +42,8 @@ public class registration extends AppCompatActivity {
 
         mDialog = new ProgressDialog(this);
 
-        name = findViewById(R.id.reg_name);
+        username = findViewById(R.id.reg_username);
+        name = findViewById(R.id.reg_username);
         email = findViewById(R.id.reg_email);
         pass = findViewById(R.id.reg_pass);
         number = findViewById(R.id.reg_number);
@@ -74,9 +75,12 @@ public class registration extends AppCompatActivity {
         db = FirebaseDatabase.getInstance().getReference().child("Account");
 
             try{
-                if(TextUtils.isEmpty(name.getText().toString().trim())){
-                    Toast.makeText(getApplicationContext(),"please enter the name", Toast.LENGTH_LONG).show();
+                if(TextUtils.isEmpty(username.getText().toString().trim())){
+                    Toast.makeText(getApplicationContext(),"please enter the Username", Toast.LENGTH_LONG).show();
 
+                }
+                else if(TextUtils.isEmpty(name.getText().toString().trim())) {
+                    Toast.makeText(getApplicationContext(), "please enter the name", Toast.LENGTH_LONG).show();
                 }
                 else if(TextUtils.isEmpty(email.getText().toString().trim())) {
                     Toast.makeText(getApplicationContext(), "please enter the email", Toast.LENGTH_LONG).show();
@@ -129,7 +133,7 @@ public class registration extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-//                            startActivity(new Intent(getApplicationContext(),login.class));
+                            startActivity(new Intent(getApplicationContext(),login.class));
                                 Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_SHORT).show();
 
                                 mDialog.dismiss();
@@ -150,6 +154,7 @@ public class registration extends AppCompatActivity {
             }
 
 
+        reg.setUsername(username.getText().toString().trim());
         reg.setName(name.getText().toString().trim());
         reg.setEmail(email.getText().toString().trim());
         reg.setPassword(pass.getText().toString().trim());
@@ -159,7 +164,7 @@ public class registration extends AppCompatActivity {
 
 
 //                    db.push().setValue(reg);
-        db.child("AC4").setValue(reg);
+        db.child("AC5").setValue(reg);
         Toast.makeText(getApplicationContext(),"Successful Insertion", Toast.LENGTH_LONG).show();
 
     }

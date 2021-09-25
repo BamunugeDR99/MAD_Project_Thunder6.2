@@ -6,6 +6,8 @@ public class User {
     private Integer number;
     private String email;
     private String password;
+    private String username;
+    private String address;
     private String profileurl;
 
     public User() {
@@ -49,5 +51,21 @@ public class User {
 
     public void setProfileurl(String profileurl) {
         this.profileurl = profileurl;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
