@@ -5,6 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
@@ -78,13 +81,13 @@ public class your_reviews extends AppCompatActivity {
 //
 //    private void txtSearch(String str)
 //    {
-//        FirebaseRecyclerOptions<review> options =
-//                new FirebaseRecyclerOptions.Builder<review>()
+//        FirebaseRecyclerOptions<yourreviews> options =
+//                new FirebaseRecyclerOptions.Builder<yourreviews>()
 //                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Reviews").orderByChild("name").startAt(str).endAt(str+"~"), review.class)
 //                        .build();
-//        mainAdapter = new MainAdapter(options);
-//        mainAdapter.startListening();
-//        recyclerView.setAdapter(mainAdapter);
+//        yourAdaptor = new YourAdaptor(options);
+//        yourAdaptor.startListening();
+//        recyclerView.setAdapter(yourAdaptor);
 //    }
 
 }
