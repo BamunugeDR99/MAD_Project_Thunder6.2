@@ -14,7 +14,13 @@
             android:exported="true" />
         <activity
             android:name=".View_card"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".registration"
             android:exported="true" />
@@ -30,11 +36,7 @@
         <activity
             android:name=".your_reviews"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".user_profile"
