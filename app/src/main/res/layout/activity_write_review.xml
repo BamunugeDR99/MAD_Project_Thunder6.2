@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="#F8F8F5"
-    tools:context=".MainActivity">
+    tools:context=".write_review">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -43,7 +43,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        android:layout_marginRight="112dp" />
 
     <TextView
         android:id="@+id/item_name"
@@ -57,7 +58,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_marginLeft="16dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -93,6 +95,7 @@
         android:layout_height="53dp"
         android:layout_marginTop="84dp"
         android:backgroundTint="#9969C8"
+        android:onClick="Save"
         android:text="Submit"
         android:textColor="#020202"
         app:cornerRadius="15dp"
