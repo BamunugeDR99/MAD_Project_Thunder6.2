@@ -7,7 +7,7 @@
 
     android:background="#FFFEFE"
     android:backgroundTint="#F1F0F0"
-    tools:context=".MainActivity">
+    tools:context=".contactus">
 
 
     <ImageView
@@ -116,6 +116,7 @@
             android:layout_marginTop="380dp"
             android:backgroundTint="#673AB7"
 
+            android:onClick="Save"
             android:text="Send"
             android:textColor="#FFFFFF"
             app:cornerRadius="25dp" />

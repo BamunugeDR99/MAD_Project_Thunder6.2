@@ -3,9 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/search_icon.xml" value="0.25462962962962965" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_add_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_contact.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_contactus.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_createreview.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_customer_reviews.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_user_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_wish_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_your_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_your_reviews.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/customer_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/update_popup.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/your_item.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
