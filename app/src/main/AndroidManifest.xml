@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MAD_Group_Project">
         <activity
+            android:name=".registration"
+            android:exported="true" />
+        <activity
             android:name=".login"
             android:exported="true" />
         <activity
@@ -23,7 +26,7 @@
         </activity>
         <activity
             android:name=".customer_reviews"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".your_reviews"
             android:exported="true" />
