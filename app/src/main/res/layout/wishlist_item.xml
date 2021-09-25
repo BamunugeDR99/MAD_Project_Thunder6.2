@@ -75,7 +75,7 @@
             android:layout_toRightOf="@id/img1"
             android:text="Course Name"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="18sp"
             android:textStyle="bold"></TextView>
 
         <ImageView
