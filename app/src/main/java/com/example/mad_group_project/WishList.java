@@ -36,7 +36,7 @@ public class WishList extends AppCompatActivity {
 
         FirebaseRecyclerOptions<WishListModel> options =
                 new FirebaseRecyclerOptions.Builder<WishListModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("WishList"), WishListModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("WishList").child("C1"), WishListModel.class)
                         .build();
 
 
