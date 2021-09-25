@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".contactus"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Createreview"
             android:exported="true" />
