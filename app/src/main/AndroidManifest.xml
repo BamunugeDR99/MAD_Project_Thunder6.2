@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MAD_Group_Project">
         <activity
-            android:name=".your_reviews"
+            android:name=".customer_reviews"
             android:exported="true" />
         <activity
-            android:name=".user_profile"
+            android:name=".your_reviews"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".user_profile"
+            android:exported="true"></activity>
         <activity
             android:name=".contactus"
             android:exported="true" />

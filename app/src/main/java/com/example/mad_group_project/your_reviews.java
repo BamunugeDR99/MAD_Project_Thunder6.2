@@ -29,7 +29,7 @@ public class your_reviews extends AppCompatActivity {
 
         FirebaseRecyclerOptions<yourreviews> options =
                 new FirebaseRecyclerOptions.Builder<yourreviews>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Reviews"), yourreviews.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("YourReviews"), yourreviews.class)
                         .build();
 
 

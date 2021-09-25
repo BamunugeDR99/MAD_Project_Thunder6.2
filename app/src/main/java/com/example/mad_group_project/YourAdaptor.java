@@ -95,7 +95,7 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
                         map.put("description",description.getText().toString());
 
 
-                        FirebaseDatabase.getInstance().getReference().child("Reviews")
+                        FirebaseDatabase.getInstance().getReference().child("YourReviews")
                                 .child(getRef(position).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -137,7 +137,7 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        FirebaseDatabase.getInstance().getReference().child("Reviews")
+                        FirebaseDatabase.getInstance().getReference().child("YourReviews")
                                 .child(getRef(position).getKey()).removeValue();
 
 
