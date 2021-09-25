@@ -2,34 +2,34 @@ package com.example.mad_group_project;
 
 public class Contact {
 
-    private String Name;
-    private String Email;
-    private String Massage;
+    private String name;
+    private String email;
+    private String messege;
 
     public Contact() {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    public String getMassage() {
-        return Massage;
+    public String getMessege() {
+        return messege;
     }
 
-    public void setMassage(String massage) {
-        Massage = massage;
+    public void setMessege(String messege) {
+        this.messege = messege;
     }
 }

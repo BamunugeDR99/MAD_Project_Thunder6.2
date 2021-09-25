@@ -52,7 +52,7 @@ public class contactus extends AppCompatActivity {
         }else {
             contact.setName(et_name.getText().toString().trim());
             contact.setEmail(et_email.getText().toString().trim());
-            contact.setMassage(et_massage.getText().toString().trim());
+            contact.setMessege(et_massage.getText().toString().trim());
 
             db.push().setValue(contact);
 
