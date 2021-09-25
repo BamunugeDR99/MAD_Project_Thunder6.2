@@ -38,9 +38,9 @@ public class  WishListAdapter extends FirebaseRecyclerAdapter<WishListModel, Wis
     protected void onBindViewHolder(@NonNull @NotNull WishListAdapter.myViewHolder holder, int position, @NonNull @NotNull WishListModel model) {
 
         holder.Itemname.setText(model.getItemName().toString());
-        holder.Price.setText(model.getPrice().toString());
+        holder.Price.setText("Rs " + model.getPrice().toString() + ".00");
         holder.Rating.setText(model.getRatings().toString());
-        holder.Reviews.setText(model.getReviews().toString());
+        holder.Reviews.setText(model.getReviews().toString() + " Reviews");
 
 
 

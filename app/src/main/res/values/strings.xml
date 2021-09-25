@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MAD_Group_Project</string>
+    <string name="app_name">Wish List</string>
     <string name="title_activity_contactus">contactus</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

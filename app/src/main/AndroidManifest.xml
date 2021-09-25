@@ -12,11 +12,7 @@
         <activity
             android:name=".myPurchases"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Add_New_Payment"
@@ -50,7 +46,15 @@
         <activity
             android:name=".Createreview"
             android:exported="true" />
-        <activity android:name=".WishList" />
+        <activity android:name=".WishList">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".MainActivity">
 
             <!-- </activity> -->
