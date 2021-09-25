@@ -99,7 +99,7 @@ public class WishList extends AppCompatActivity {
 
         FirebaseRecyclerOptions<WishListModel> options =
                 new FirebaseRecyclerOptions.Builder<WishListModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("WishList").orderByChild("ItemName").startAt(str).endAt(str + "~"), WishListModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("WishList").child("C1").orderByChild("ItemName").startAt(str).endAt(str + "~"), WishListModel.class)
                         .build();
 
 
