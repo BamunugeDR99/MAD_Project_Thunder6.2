@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">MAD_Group_Project</string>
+    <string name="app_name">Wish List</string>
+    <string name="title_activity_contactus">contactus</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="BTN_Select">Select</string>
+    <string name="BTN_REMOVE">REMOVE</string>
+    <string name="BT1_1">Submit</string>
+    <string name="Text_111" />
+    <string name="ItemPricw">Item Price</string>
+    <string name="Date">Purchased Date</string>
 </resources>
