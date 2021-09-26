@@ -12,6 +12,41 @@
         <activity android:name=".Single_Item_View"></activity>
         <activity android:name=".HomeUI" />
         <activity
+
+            android:name=".customer_reviews"
+            android:exported="true" />
+        <activity
+            android:name=".your_reviews"
+            android:exported="true" />
+
+
+            android:name=".ShoppingCart"
+            android:exported="true" />
+        <activity android:name=".MainActivity">
+
+            android:name=".myPurchases"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".Add_New_Payment"
+            android:exported="true" />
+        <activity
+            android:name=".View_card"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".registration"
+            android:exported="true" />
+        <activity
+            android:name=".login"
+            android:exported="true" />
+        <activity
+            android:name=".write_review"
+            android:exported="true" />
+        <activity
             android:name=".customer_reviews"
             android:exported="true" />
         <activity
@@ -27,6 +62,9 @@
             android:name=".Createreview"
             android:exported="true" />
         <activity android:name=".WishList">
+
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

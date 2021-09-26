@@ -76,7 +76,7 @@ public class user_profile extends AppCompatActivity {
 
     public void Show(View view){
 
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Account").child("AC1");
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Account").child("AC4");
 
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -116,7 +116,7 @@ public class user_profile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if(snapshot.hasChild("AC1")){
+                if(snapshot.hasChild("AC4")){
 
                     try{
 
@@ -125,7 +125,7 @@ public class user_profile extends AppCompatActivity {
                         acc.setNumber(Integer.parseInt(number.getText().toString().trim()));
 
 
-                        db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC3");
+                        db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC4");
                         db.setValue(acc);
                         clearFields();
                         Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
@@ -158,7 +158,7 @@ public class user_profile extends AppCompatActivity {
 
                 if (snapshot.hasChild(("AC1"))){
 
-                    db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC1");
+                    db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC4");
                     db.removeValue();
                     clearFields();
 
