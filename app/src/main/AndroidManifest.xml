@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MAD_Group_Project">
         <activity
+
+            android:name=".ShoppingCart"
+            android:exported="true" />
+        <activity android:name=".MainActivity">
+
             android:name=".myPurchases"
             android:exported="true" >
 
@@ -47,6 +52,7 @@
             android:name=".Createreview"
             android:exported="true" />
         <activity android:name=".WishList">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
