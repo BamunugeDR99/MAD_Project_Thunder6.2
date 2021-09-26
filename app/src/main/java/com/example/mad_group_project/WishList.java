@@ -5,9 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
@@ -43,7 +45,43 @@ public class WishList extends AppCompatActivity {
         wishListAdapter = new WishListAdapter(options);
 
         wl_rv.setAdapter(wishListAdapter);
+
+
+
+
+
+
+        int total = 0;
+        for(int i = 0; i < wishListAdapter.getItemCount(); i++){
+            TextView text = ((TextView) wl_rv.findViewHolderForAdapterPosition(i)
+                    .itemView.findViewById(R.id.wl_price));
+
+            Log.d("ItemPrice", wl_rv.findViewHolderForAdapterPosition(i).itemView.findViewById(R.id.wl_price).toString());
+            total = total + Integer.parseInt(text.getText().toString());
+
+            Log.d("Total22", String.valueOf(total));
+
+        }
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     @Override

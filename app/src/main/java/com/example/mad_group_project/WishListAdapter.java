@@ -2,6 +2,7 @@ package com.example.mad_group_project;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class  WishListAdapter extends FirebaseRecyclerAdapter<WishListModel, WishListAdapter.myViewHolder> {
 
-
+    float Total = 0f;
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -63,7 +64,7 @@ public class  WishListAdapter extends FirebaseRecyclerAdapter<WishListModel, Wis
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(holder.Itemname.getContext());
                 builder.setTitle("Are you sure tou want to delete?");
-                builder.setMessage("Deleted data cannot be Undo");
+                builder.setMessage("This item will be removed from your wishlist");
 
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
