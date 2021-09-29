@@ -17,7 +17,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/purple_500</item>
     </style>
 
     <string name="BTN_Select">Select</string>

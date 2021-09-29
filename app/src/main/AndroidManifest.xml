@@ -45,9 +45,9 @@
 
             android:name=".customer_reviews"
             android:exported="true" />
-        <activity
-            android:name=".your_reviews"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".your_reviews"-->
+<!--            android:exported="true" />-->
 
 
             android:name=".ShoppingCart"
@@ -67,24 +67,24 @@
 
         </activity>
 
-        <activity
-            android:name=".registration"
-            android:exported="true" />
-        <activity
-            android:name=".login"
-            android:exported="true" />
-        <activity
-            android:name=".write_review"
-            android:exported="true" />
-        <activity
-            android:name=".customer_reviews"
-            android:exported="true" />
-        <activity
-            android:name=".your_reviews"
-            android:exported="true" />
-        <activity
-            android:name=".user_profile"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".registration"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".login"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".write_review"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".customer_reviews"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".your_reviews"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".user_profile"-->
+<!--            android:exported="true" />-->
 
         <activity
             android:name=".contactus"
@@ -102,24 +102,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+<!--        <activity android:name=".MainActivity">-->
 
-            <!-- </activity> -->
-
-
-            <!-- android:name=".Add_Card" -->
-            <!-- android:exported="true" /> -->
+<!--            &lt;!&ndash; </activity> &ndash;&gt;-->
 
 
-            <!--  -->
+<!--            &lt;!&ndash; android:name=".Add_Card" &ndash;&gt;-->
+<!--            &lt;!&ndash; android:exported="true" /> &ndash;&gt;-->
 
 
-            <!-- <activity android:name=".WishList"></activity> -->
+<!--            &lt;!&ndash;  &ndash;&gt;-->
 
 
-            <!-- <activity android:name=".MainActivity"> -->
+<!--            &lt;!&ndash; <activity android:name=".WishList"></activity> &ndash;&gt;-->
 
-        </activity>
+
+<!--            &lt;!&ndash; <activity android:name=".MainActivity"> &ndash;&gt;-->
+
+<!--        </activity>-->
     </application>
 
 </manifest>

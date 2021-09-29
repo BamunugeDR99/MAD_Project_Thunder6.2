@@ -33,6 +33,7 @@ public class your_reviews extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_reviews);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Assigning recycler view
         rv = (RecyclerView) findViewById(R.id.rv);
