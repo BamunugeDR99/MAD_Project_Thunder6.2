@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#C5C4C4"
+    android:backgroundTint="#B3B3B3"
     android:elevation="8dp"
-    app:cardBackgroundColor="#E3E1E1"
+    app:cardBackgroundColor="#A8A8A8"
     app:cardCornerRadius="15dp"
-    app:cardUseCompatPadding="true"
-    android:background="#FFFFFF"
-    android:backgroundTint="#DFDEDE">
+    app:cardElevation="10dp"
+    app:cardMaxElevation="10dp"
+    app:cardUseCompatPadding="true">
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#B6B5B5"
+        android:layout_width="383dp"
+        android:layout_height="150dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#ffffff"
         android:padding="15dp">
 
 
@@ -28,7 +31,7 @@
 
         <TextView
             android:id="@+id/item_name"
-            android:layout_width="match_parent"
+            android:layout_width="251dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/img1"
@@ -49,6 +52,18 @@
             android:textColor="@color/black"
             android:textSize="19sp"
             android:textStyle="normal"></TextView>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/item_name"
+            android:layout_marginStart="-2dp"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/item_name"
+            android:layout_toRightOf="@+id/item_name"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
     </RelativeLayout>
 
 

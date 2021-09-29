@@ -43,18 +43,13 @@ public class CustomerAdaptor extends FirebaseRecyclerAdapter<cusreview, Customer
         holder.name.setText(model.getCusname());
         holder.description.setText(model.getCusdescription());
 
-
         Glide.with(holder.img.getContext())
                 .load(model.getCusurl())
                 .placeholder(R.drawable.common_google_signin_btn_icon_dark)
                 .circleCrop()
                 .error(R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
-
-
-
     }
-
     @NonNull
     @NotNull
     @Override
@@ -64,20 +59,12 @@ public class CustomerAdaptor extends FirebaseRecyclerAdapter<cusreview, Customer
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.customer_item, parent, false);
         return new myViewHolder(view);
     }
-
     class myViewHolder extends RecyclerView.ViewHolder{
-        ///////////////////////
         CircleImageView img;
-        //        ImageView img;
         TextView name,description;
-
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-
-
-
-
             img = (CircleImageView)itemView.findViewById(R.id.img1);
             name = (TextView)itemView.findViewById(R.id.item_name);
             description = (TextView)itemView.findViewById(R.id.item_review);
