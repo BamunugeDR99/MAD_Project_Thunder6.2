@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
 
 
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Registration"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -30,7 +30,7 @@
         android:id="@+id/reg_username"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/ed_design2"
         android:ems="10"
         android:gravity="center"
@@ -153,7 +153,7 @@
         android:id="@+id/reg_btn"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/ed_design"
 
         android:onClick="save"

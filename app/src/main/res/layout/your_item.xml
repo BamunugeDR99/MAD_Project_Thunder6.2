@@ -5,19 +5,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="8dp"
+    android:background="#BFBFBF"
 
-    app:cardBackgroundColor="#E3E1E1"
+    android:backgroundTint="#B6B6B6"
+    android:elevation="8dp"
+    app:cardBackgroundColor="#B8B8B8"
     app:cardCornerRadius="15dp"
-    app:cardUseCompatPadding="true"
-    android:background="#FFFFFF"
-    android:backgroundTint="#DFDEDE">
+    app:cardElevation="10dp"
+    app:cardMaxElevation="10dp"
+    app:cardUseCompatPadding="true">
 
 
     <RelativeLayout
         android:layout_width="392dp"
-        android:layout_height="170dp"
-        android:backgroundTint="#B6B5B5"
+        android:layout_height="199dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#ffffff"
+        android:hapticFeedbackEnabled="true"
         android:padding="15dp">
 
 
@@ -31,7 +35,7 @@
 
         <TextView
             android:id="@+id/rev_name"
-            android:layout_width="match_parent"
+            android:layout_width="229dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="11dp"
             android:layout_toRightOf="@+id/img"
@@ -42,11 +46,11 @@
 
         <TextView
             android:id="@+id/rev_review"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="36dp"
             android:layout_below="@+id/rev_name"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="17dp"
             android:layout_toRightOf="@+id/img"
 
             android:text="Review"
@@ -61,7 +65,7 @@
             android:layout_below="@+id/rev_review"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="20dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="31dp"
             android:backgroundTint="#4CAF50"
@@ -73,12 +77,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rev_review"
-            android:layout_marginLeft="23dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_toRightOf="@+id/btn_edit"
             android:backgroundTint="#F44336"
             android:text="Delete Review"
             android:textSize="16sp"></Button>
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_toEndOf="@+id/rev_name"
+            android:layout_toRightOf="@+id/rev_name"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
 
     </RelativeLayout>
 

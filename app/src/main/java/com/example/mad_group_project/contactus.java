@@ -1,6 +1,7 @@
 package com.example.mad_group_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -30,23 +31,17 @@ public class contactus extends AppCompatActivity {
         et_name = findViewById(R.id.et_name);
         et_email = findViewById(R.id.et_email);
         et_massage = findViewById(R.id.et_massage);
-
         btn_submit = findViewById(R.id.btn_submit);
 
         contact = new Contact();
     }
-
     public void Save(View view){
-
         db = FirebaseDatabase.getInstance().getReference().child("Contact");
-
 
         if(TextUtils.isEmpty(et_name.getText().toString().trim())){
             Toast.makeText(getApplicationContext(),"please enter the name", Toast.LENGTH_LONG).show();
-
         }else if(TextUtils.isEmpty(et_email.getText().toString().trim())){
             Toast.makeText(getApplicationContext(),"please enter the email", Toast.LENGTH_LONG).show();
-
         }else if(TextUtils.isEmpty(et_massage.getText().toString().trim())) {
             Toast.makeText(getApplicationContext(), "please enter the massage", Toast.LENGTH_LONG).show();
         }else {
@@ -55,12 +50,12 @@ public class contactus extends AppCompatActivity {
             contact.setMessege(et_massage.getText().toString().trim());
 
             db.push().setValue(contact);
-
             Toast.makeText(getApplicationContext(),"successful insertion", Toast.LENGTH_LONG).show();
         }
-
     }
 }
+
+
 
 
 

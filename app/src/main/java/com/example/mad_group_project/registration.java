@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class registration extends AppCompatActivity {
 
     EditText username, name,email,pass,number,address;
@@ -30,7 +32,6 @@ public class registration extends AppCompatActivity {
     ProgressDialog mDialog;
 
     DatabaseReference db;
-
     register reg;
 
     @Override
@@ -39,7 +40,6 @@ public class registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         mAuth = FirebaseAuth.getInstance();
-
         mDialog = new ProgressDialog(this);
 
         username = findViewById(R.id.reg_username);
@@ -54,30 +54,18 @@ public class registration extends AppCompatActivity {
 
         reg = new register();
 
-//        btnReg.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), login.class));
             }
         });
-//
-
-
     }
-
     public void save(View view) {
         db = FirebaseDatabase.getInstance().getReference().child("Account");
-
             try{
                 if(TextUtils.isEmpty(username.getText().toString().trim())){
                     Toast.makeText(getApplicationContext(),"please enter the Username", Toast.LENGTH_LONG).show();
-
                 }
                 else if(TextUtils.isEmpty(name.getText().toString().trim())) {
                     Toast.makeText(getApplicationContext(), "please enter the name", Toast.LENGTH_LONG).show();
@@ -94,24 +82,9 @@ public class registration extends AppCompatActivity {
                 }
                 else if(TextUtils.isEmpty(address.getText().toString().trim())) {
                     Toast.makeText(getApplicationContext(), "please enter the address", Toast.LENGTH_LONG).show();
-
                 }else{
 
-//
-//                    reg.setName(name.getText().toString().trim());
-//                    reg.setEmail(email.getText().toString().trim());
-//                    reg.setPassword(pass.getText().toString().trim());
-//                    reg.setNumber(Integer.parseInt(number.getText().toString().trim()));
-//                    reg.setAddress(address.getText().toString().trim());
-//
-////                    db.push().setValue(reg);
-//                    db.child("AC3").setValue(reg);
-//                    Toast.makeText(getApplicationContext(),"Successful Insertion", Toast.LENGTH_LONG).show();
-
-
-
                     //Authentication
-
                     String rEmail = email.getText().toString().trim();
                     String rPass = pass.getText().toString().trim();
 
@@ -123,11 +96,8 @@ public class registration extends AppCompatActivity {
                         pass.setError("Required Field...");
                         return;
                     }
-
                     mDialog.setMessage("Processing...");
                     mDialog.show();
-
-//                save(View view);
 
                     mAuth.createUserWithEmailAndPassword(rEmail, rPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -137,23 +107,17 @@ public class registration extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_SHORT).show();
 
                                 mDialog.dismiss();
-
                             } else {
                                 Toast.makeText(getApplicationContext(), "Failed..", Toast.LENGTH_LONG).show();
 
                                 mDialog.dismiss();
                             }
                         }
-
-
                     });
                 }
-
             }catch (NumberFormatException e){
                 Toast.makeText(getApplicationContext(),"Number Format Exception", Toast.LENGTH_LONG).show();
             }
-
-
         reg.setUsername(username.getText().toString().trim());
         reg.setName(name.getText().toString().trim());
         reg.setEmail(email.getText().toString().trim());
@@ -161,11 +125,8 @@ public class registration extends AppCompatActivity {
         reg.setNumber(Integer.parseInt(number.getText().toString().trim()));
         reg.setAddress(address.getText().toString().trim());
 
-
-
-//                    db.push().setValue(reg);
-        db.child("AC5").setValue(reg);
+                    db.push().setValue(reg);
+//        db.child("AC5").setValue(reg);
         Toast.makeText(getApplicationContext(),"Successful Insertion", Toast.LENGTH_LONG).show();
-
     }
 }
