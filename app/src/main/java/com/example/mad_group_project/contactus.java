@@ -28,6 +28,10 @@ public class contactus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contactus);
 
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         et_name = findViewById(R.id.et_name);
         et_email = findViewById(R.id.et_email);
         et_massage = findViewById(R.id.et_massage);
