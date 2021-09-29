@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> </string>
+    <string name="app_name">My Wish List </string>
     <string name="title_activity_contactus">contactus</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
