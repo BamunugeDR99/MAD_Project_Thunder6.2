@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="6dp"
+    app:cardCornerRadius="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="166dp"
+        android:padding="15dp">
+
+
+        <!--        <de.hdodenhof.circleimageview.CircleImageView-->
+        <!--            android:id="@+id/img1"-->
+        <!--            android:layout_width="80dp"-->
+        <!--            android:layout_height="80dp"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:src="@mipmap/ic_launcher"-->
+        <!--            app:civ_border_color="#FF000000"-->
+        <!--            app:civ_border_width="2dp" />-->
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher" />
+
+
+        <TextView
+            android:id="@+id/nametext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Item Name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/pricetext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nametext"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="@string/ItemPricw"
+            android:textColor="@color/black"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/datetext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pricetext"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="@string/Date"
+            android:textColor="@color/black"
+            android:textSize="15sp"></TextView>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+

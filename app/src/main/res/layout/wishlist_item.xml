@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:elevation="6dp"
+    app:cardCornerRadius="6dp"
+
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+
+        <!--        <de.hdodenhof.circleimageview.CircleImageView-->
+        <!--            android:id="@+id/img1"-->
+        <!--            android:layout_width="80dp"-->
+        <!--            android:layout_height="80dp"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:src="@mipmap/ic_launcher"-->
+        <!--            app:civ_border_color="#FF000000"-->
+        <!--            app:civ_border_width="2dp" />-->
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/img1"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            />
+
+
+        <TextView
+            android:id="@+id/wl_itemName"
+            android:layout_width="275dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Item Name"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"></TextView>
+
+
+        <TextView
+            android:id="@+id/wl_rating"
+            android:layout_width="wrap_content"
+
+            android:layout_height="34dp"
+            android:layout_below="@id/wl_itemName"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Rating"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/wl_price"
+            android:layout_width="278dp"
+
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wl_rating"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Course Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"></TextView>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="53dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/wl_itemName"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/wl_rating"
+            android:layout_toRightOf="@+id/wl_rating"
+            app:srcCompat="@drawable/ic_rc_star_foreground"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/wl_noOfReviews"
+            android:layout_width="129dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/wl_itemName"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:text="NoOf Reviews"
+            android:textColor="#121111"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+
+            android:layout_below="@id/wl_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/wl_btn_addtoCart"
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="5dp"
+                android:text="Add to Cart"
+                android:textAllCaps="false"></Button>
+
+            <Button
+                android:id="@+id/wl_btn_remove"
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:text="Remove"
+                android:textAllCaps="false"></Button>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

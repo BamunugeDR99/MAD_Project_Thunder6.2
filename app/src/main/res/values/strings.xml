@@ -1,5 +1,7 @@
 <resources>
+
     <string name="app_name">Sunset Gifts</string>
+
     <string name="title_activity_contactus">contactus</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -10,10 +12,19 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/purple_500</item>
     </style>
+
+    <string name="BTN_Select">Select</string>
+    <string name="BTN_REMOVE">REMOVE</string>
+    <string name="BT1_1">Submit</string>
+    <string name="Text_111" />
+    <string name="ItemPricw">Item Price</string>
+    <string name="Date">Purchased Date</string>
+
 </resources>
