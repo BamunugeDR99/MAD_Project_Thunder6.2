@@ -17,16 +17,20 @@
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/ed_design.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/ed_design2.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/search_icon.xml" value="0.25462962962962965" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout-w1240dp/activity_sign_up_page.xml" value="0.183203125" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_add_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_contact.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_contactus.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_createreview.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_customer_reviews.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_edit_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_main2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_registration.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_second3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_sign_up_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_user_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_wish_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_write_review.xml" value="0.24010416666666667" />
@@ -39,6 +43,8 @@
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/update_popup.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/your_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/menu/drawer_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/menu/wl_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/Downloads/activity_edit_profile.xml" value="0.183203125" />
       </map>
     </option>
   </component>

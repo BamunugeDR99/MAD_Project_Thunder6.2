@@ -3,14 +3,21 @@ package com.example.mad_group_project;
 public class User {
 
     private String name;
-    private Integer number;
+    private String number;
     private String email;
     private String password;
     private String username;
     private String address;
     private String profileurl;
 
-    public User() {
+    public User(String name, String number, String email, String password, String username, String address) {
+        this.name = name;
+        this.number = number;
+        this.email = email;
+        this.password = password;
+        this.username = username;
+        this.address = address;
+        this.profileurl = profileurl;
     }
 
     public String getName() {
@@ -21,11 +28,11 @@ public class User {
         this.name = name;
     }
 
-    public Integer getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
