@@ -1,6 +1,8 @@
 <resources>
 
+
     <string name="app_name">Sunset Gifts</string>
+
 
     <string name="title_activity_contactus">contactus</string>
     <string name="prompt_email">Email</string>
