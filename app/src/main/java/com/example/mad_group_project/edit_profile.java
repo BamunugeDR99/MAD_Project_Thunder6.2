@@ -83,7 +83,7 @@ public class edit_profile extends AppCompatActivity {
         Upload_image = findViewById(R.id.Upload_image);
 
 
-        dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("YATaDgnUNUhCCMzAXWXuBz3RcVJ3");// id **
+        dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("aAMe4dwdPdZsqgNTdWztSBaTD512");// id **
         storageReference = FirebaseStorage.getInstance().getReference();
 
         Upload_image.setOnClickListener(new View.OnClickListener() {
@@ -120,13 +120,13 @@ public class edit_profile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.hasChildren()){
 
-                    edit_fn.setText(dataSnapshot.child("firstName").getValue().toString());
-                    edit_ln.setText(dataSnapshot.child("lastName").getValue().toString());
-                    edit_email.setText(dataSnapshot.child("email").getValue().toString());
-                    edit_phone.setText(dataSnapshot.child("phoneNumber").getValue().toString());
-                    edit_add.setText(dataSnapshot.child("address").getValue().toString());
+                    edit_fn.setText(dataSnapshot.child("firstname").getValue().toString());
+                    edit_ln.setText(dataSnapshot.child("lastname").getValue().toString());
+                    edit_email.setText(dataSnapshot.child("input_email").getValue().toString());
+                    edit_phone.setText(dataSnapshot.child("phone_number").getValue().toString());
+                    edit_add.setText(dataSnapshot.child("postal_address").getValue().toString());
                     currentPassword = dataSnapshot.child("password").getValue().toString();
-                    String link = dataSnapshot.child("pimage").getValue(String.class);
+                    String link = dataSnapshot.child("profile_image").getValue(String.class);
                     Picasso.get().load(link).into(profile_image);
 
                 }else{
@@ -155,7 +155,7 @@ public class edit_profile extends AppCompatActivity {
                         if(new_password.getText().toString().equals(confirm_password.getText().toString())){
                             HashMap customer = new HashMap();
                             customer.put("password",new_password.getText().toString().trim());
-                            dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("YATaDgnUNUhCCMzAXWXuBz3RcVJ3");
+                            dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("aAMe4dwdPdZsqgNTdWztSBaTD512");
 
                             dbRef.updateChildren(customer).addOnCompleteListener(new OnCompleteListener() {
                                 @Override
@@ -266,15 +266,15 @@ public class edit_profile extends AppCompatActivity {
                             public void onSuccess(Uri uri) {
                                 final Map<String,Object> map = new HashMap<>();
 
-                                map.put("pimage",uri.toString());
-                                map.put("firstName", edit_fn.getText().toString());
-                                map.put("lastName", edit_ln.getText().toString());
-                                map.put("email", edit_email.getText().toString());
-                                map.put("phoneNumber", edit_phone.getText().toString());
-                                map.put("address", edit_add.getText().toString());
+                                map.put("profile_image",uri.toString());
+                                map.put("firstname", edit_fn.getText().toString());
+                                map.put("lastname", edit_ln.getText().toString());
+                                map.put("input_email", edit_email.getText().toString());
+                                map.put("phone_number", edit_phone.getText().toString());
+                                map.put("postal_address", edit_add.getText().toString());
 //                                currentPassword = dataSnapshot.child("password").getValue().toString();
                                 dbRef2 = FirebaseDatabase.getInstance().getReference();
-                                dbRef2.child("Customer").child("YATaDgnUNUhCCMzAXWXuBz3RcVJ3").updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                dbRef2.child("Customer").child("aAMe4dwdPdZsqgNTdWztSBaTD512").updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){

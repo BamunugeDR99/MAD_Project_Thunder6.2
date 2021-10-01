@@ -7,17 +7,27 @@ public class Customer {
      private String postal_address;
      private String phone_number;
      private String password;
-     private String et_confirm_password;
+     private String profile_image;
 
-    public Customer(String firstname, String lastname, String input_email, String postal_address, String phone_number, String password, String et_confirm_password) {
+    public Customer(String firstname, String lastname, String input_email, String postal_address, String phone_number, String password,  String profile_image) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.input_email = input_email;
         this.postal_address = postal_address;
         this.phone_number = phone_number;
         this.password = password;
-        this.et_confirm_password = et_confirm_password;
+        this.profile_image = profile_image;
     }
+
+//    public Customer(String firstname, String lastname, String input_email, String postal_address, String phone_number, String password, String et_confirm_password) {
+//        this.firstname = firstname;
+//        this.lastname = lastname;
+//        this.input_email = input_email;
+//        this.postal_address = postal_address;
+//        this.phone_number = phone_number;
+//        this.password = password;
+//        this.et_confirm_password = et_confirm_password;
+//    }
 
     public String getFirstname() {
         return firstname;
@@ -67,11 +77,12 @@ public class Customer {
         this.password = password;
     }
 
-    public String getEt_confirm_password() {
-        return et_confirm_password;
+
+    public String getProfile_image() {
+        return profile_image;
     }
 
-    public void setEt_confirm_password(String et_confirm_password) {
-        this.et_confirm_password = et_confirm_password;
+    public void setProfile_image(String profile_image) {
+        this.profile_image = profile_image;
     }
 }
