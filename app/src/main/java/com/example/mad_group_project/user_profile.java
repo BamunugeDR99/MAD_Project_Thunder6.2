@@ -32,8 +32,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class user_profile extends AppCompatActivity {
 
-    EditText pname,pro_number,pro_email,pro_address;
-    EditText name, email,number;
+    TextView username;
+    EditText name, email,number, address;
     //    CircleImageView img;
     Button btnUpdate, btnDelete;
 
@@ -49,9 +49,10 @@ public class user_profile extends AppCompatActivity {
         name=findViewById(R.id.pname);
         email=findViewById(R.id.pemail);
         number=findViewById(R.id.pnumber);
+        address=findViewById(R.id.paddress);
+        username=findViewById(R.id.pusername);
 
 //        img = (CircleImageView)findViewById(R.id.profile_image);
-
         btnUpdate=findViewById(R.id.btn_up);
         btnDelete=findViewById(R.id.btn_del);
 
@@ -59,24 +60,21 @@ public class user_profile extends AppCompatActivity {
 //        View view = null;
 //        ShowProfile(View view);
         acc = new User();
-
     }
-
-
-
-
     //Method to clear all user Inputs
     public void clearFields(){
 
         name.setText("");
         email.setText("");
         number.setText("");
+        address.setText("");
+        username.setText("");
 
     }
 
     public void Show(View view){
 
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Account").child("AC4");
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Account").child("AC5");
 
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -87,10 +85,10 @@ public class user_profile extends AppCompatActivity {
                     name.setText(dataSnapshot.child("name").getValue().toString());
                     number.setText(dataSnapshot.child("number").getValue().toString());
                     email.setText(dataSnapshot.child("email").getValue().toString());
+                    address.setText(dataSnapshot.child("address").getValue().toString());
+                    username.setText(dataSnapshot.child("username").getValue().toString());
 //                    img.setImageBitmap(dataSnapshot.child("profileurl").getValue().toString());
-
                 }
-
                 else{
 
                     Toast.makeText(getApplicationContext(), "No Source to Display", Toast.LENGTH_SHORT).show();
@@ -116,71 +114,49 @@ public class user_profile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if(snapshot.hasChild("AC4")){
-
+                if(snapshot.hasChild("AC5")){
                     try{
-
                         acc.setName(name.getText().toString().trim());
                         acc.setEmail(email.getText().toString().trim());
+                        acc.setAddress(address.getText().toString().trim());
+                        acc.setUsername(username.getText().toString().trim());
                         acc.setNumber(Integer.parseInt(number.getText().toString().trim()));
 
-
-                        db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC4");
+                        db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC5");
                         db.setValue(acc);
                         clearFields();
                         Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
 
-
-
                     }catch(NumberFormatException e){
                         Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
                     }
-
                 }
-
             }
-
             @Override
             public void onCancelled(@NonNull  DatabaseError error) {
-
             }
         });
     }
 
-
     public void Delete(View view){
-
         DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Account");
-
         delRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull  DataSnapshot snapshot) {
 
-                if (snapshot.hasChild(("AC1"))){
-
-                    db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC4");
+                if (snapshot.hasChild(("AC5"))){
+                    db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC5");
                     db.removeValue();
                     clearFields();
-
                     Toast.makeText(getApplicationContext(), "Data Deleted Successfully" , Toast.LENGTH_SHORT).show();
-
-
-
                 }
                 else{
-
                     Toast.makeText(getApplicationContext(), "No Source to Delete", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
-
     }
 }

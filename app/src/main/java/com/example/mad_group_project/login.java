@@ -39,7 +39,6 @@ public class login extends AppCompatActivity {
         signup=findViewById(R.id.sign_txt);
 
         mAuth= FirebaseAuth.getInstance();
-
         mDialog=new ProgressDialog(this);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -51,12 +50,10 @@ public class login extends AppCompatActivity {
                 if(TextUtils.isEmpty(rEmail)){
                     email.setError("Required Field...");
                     return;
-                }
-                if (TextUtils.isEmpty(rPass)){
+                }if (TextUtils.isEmpty(rPass)){
                     pass.setError("Required Field..");
                     return;
                 }
-
                 mDialog.setMessage("Processing..");
                 mDialog.show();
 
@@ -66,12 +63,10 @@ public class login extends AppCompatActivity {
                         if(task.isSuccessful()){
                             startActivity(new Intent(getApplicationContext(),user_profile.class));
                             Toast.makeText(getApplicationContext(),"Successful", Toast.LENGTH_SHORT).show();
-
                             mDialog.dismiss();
                         }
                         else{
                             Toast.makeText(getApplicationContext(),"Failed..",Toast.LENGTH_LONG).show();
-
                             mDialog.dismiss();
                         }
                     }

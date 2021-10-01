@@ -45,11 +45,10 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
 
 
     @Override
-    protected void onBindViewHolder(@NonNull @NotNull myViewHolder holder, final int position, @NonNull @NotNull yourreviews model) {
+    protected void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position, @NonNull @NotNull yourreviews model) {
 
         holder.name.setText(model.getName());
         holder.description.setText(model.getDescription());
-
 
         Glide.with(holder.img.getContext())
                 .load(model.getImageurl())
@@ -57,9 +56,6 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
                 .circleCrop()
                 .error(R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
-
-
-        //Bind Updatepopup to viewholder
 
         holder.btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,95 +66,57 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
                         .setExpanded(true, 1200)
                         .create();
 
-                //dialogPlus.show();
-                View view = dialogPlus.getHolderView();
+            View view = dialogPlus.getHolderView();
+            EditText description;
+            description = view.findViewById(R.id.txtName);
+            Button btnUpdate = view.findViewById(R.id.btnUpdate);
+            description.setText(model.getDescription());
+            dialogPlus.show();
 
-                EditText description;
-
-//                name = view.findViewById(R.id.txtName);
-                description = view.findViewById(R.id.txtName);
-
-                Button btnUpdate = view.findViewById(R.id.btnUpdate);
-
-//                name.setText(model.getName());
-                description.setText(model.getDescription());
-
-                dialogPlus.show();
-
-
-                btnUpdate.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        Map<String, Object> map = new HashMap<>();
-
-                        map.put("description",description.getText().toString());
-
-
-                        FirebaseDatabase.getInstance().getReference().child("YourReviews")
-                                .child(getRef(position).getKey()).updateChildren(map)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-
-                                        Toast.makeText(holder.name.getContext(), "Data Updated Successfully", Toast.LENGTH_SHORT);
-                                        dialogPlus.dismiss();
-                                    }
-                                })
-
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure( Exception e) {
-                                        Toast.makeText(holder.name.getContext(), "Error While Updating Data", Toast.LENGTH_SHORT);
-                                    }
-                                });
-
-
-                    }
-                });
-
-
-
-
-
-            }
-        });
-
+            btnUpdate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("description",description.getText().toString());
+                    FirebaseDatabase.getInstance().getReference().child("YourReviews")
+                        .child(getRef(position).getKey()).updateChildren(map)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                              Toast.makeText(holder.name.getContext(),"Data Updated Successfully",Toast.LENGTH_SHORT);
+                               dialogPlus.dismiss();
+                               }
+                            })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure( Exception e) {
+                              Toast.makeText(holder.name.getContext(),"Error While Updating Data",Toast.LENGTH_SHORT);
+                              }
+                           });
+                    }});
+            }});
         //On Delete function
         holder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(holder.name.getContext());
                 builder.setTitle("Are you sure tou want to delete?");
-                builder.setMessage("Deleted data cannot be Undo");
-
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                         FirebaseDatabase.getInstance().getReference().child("YourReviews")
                                 .child(getRef(position).getKey()).removeValue();
-
-
-
-
                     }
                 });
-
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(holder.name.getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                     }
                 });
-
                 builder.show();
-
             }
         });
-
-
     }
 
     @NonNull

@@ -2,6 +2,7 @@ package com.example.mad_group_project;
 
 public class register {
 
+    private String username;
     private String name;
     private String email;
     private String password;
@@ -9,6 +10,14 @@ public class register {
     private String address;
 
     public register() {
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getName() {

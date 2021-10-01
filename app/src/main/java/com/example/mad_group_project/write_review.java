@@ -31,24 +31,19 @@ public class write_review extends AppCompatActivity {
         rev_btn = findViewById(R.id.rev_btn);
 
         rev = new writerev();
-
     }
-
     public void Save(View view){
 
         db = FirebaseDatabase.getInstance().getReference().child("WriteReview");
 
         if(TextUtils.isEmpty(review.getText().toString().trim())){
             Toast.makeText(getApplicationContext(),"please enter the review", Toast.LENGTH_LONG).show();
-
         }else {
             rev.setReview(review.getText().toString().trim());
 
-//            db.push().setValue(rev);
-            db.child("WR2").setValue(rev);
-
+            db.push().setValue(rev);
+//            db.child("WR2").setValue(rev);
             Toast.makeText(getApplicationContext(),"successful insertion", Toast.LENGTH_LONG).show();
         }
     }
-
 }
