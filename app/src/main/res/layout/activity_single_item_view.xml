@@ -254,22 +254,21 @@
                 android:textStyle="bold" />
 
             <ImageButton
-                android:id="@+id/GtoReviews_Btn"
-                android:layout_width="92dp"
+                android:id="@+id/GoToReviews_Btn"
+                android:layout_width="46dp"
                 android:layout_height="43dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="94dp"
-                android:layout_marginLeft="94dp"
+                android:layout_marginStart="125dp"
+                android:layout_marginLeft="125dp"
                 android:layout_marginTop="9dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginRight="22dp"
+                android:layout_marginEnd="37dp"
+                android:layout_marginRight="37dp"
                 android:layout_marginBottom="14dp"
                 android:layout_toEndOf="@+id/Reviews"
                 android:layout_toRightOf="@+id/Reviews"
-                android:background="#FFFFFF"
                 app:srcCompat="@drawable/ic_save_foreground"
                 tools:ignore="VectorDrawableCompat" />
 

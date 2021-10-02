@@ -1,5 +1,6 @@
 package com.example.mad_group_project;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,11 +79,11 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                 description = view.findViewById(R.id.Description);
                 imgI = view.findViewById(R.id.imageView);
 
-                ImageButton imgbtn1 = view.findViewById(R.id.GtoReviews_Btn);
-                ImageButton imgbtn2 = view.findViewById(R.id.AddtoWislList_Btn);
+                ImageButton imgbtn1 = (ImageButton) view.findViewById(R.id.GoToReviews_Btn);
+                ImageButton imgbtn2 = (ImageButton) view.findViewById(R.id.AddtoWislList_Btn);
 
 
-                price.setText("Rs" + model.getPrice() + ".00");
+                price.setText("Rs" + model.getPrice() );
                 productName.setText(model.getItemName());
                 ratings.setText(model.getRatings());
                 description.setText(model.getDescription());
@@ -102,6 +103,29 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
 
 
                 dialogPlus.show();
+
+
+                imgbtn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+                        Log.d("Button Message", "Ebuwa");
+                    }
+                });
+
+
+                imgbtn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+                        Log.d("Button Message", "Ebuwa2");
+
+
+
+                    }
+                });
 
 
 //                btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -137,13 +161,6 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
 //
 //                    }
 //                });
-
-
-
-
-
-
-
 
 
 

@@ -38,5 +38,13 @@
     <string name="addButton">+</string>
     <string name="removeBtn">-</string>
     <string name="quantity">1</string>
+    <string name="appName">Sunset Gifts</string>
+    <string name="Trending">Trending Now</string>
+    <string name="heading2">Bring Joy To Your Loved ones</string>
+    <string name="category1">Cakes</string>
+    <string name="category2">Combos</string>
+    <string name="category4">Flowers</string>
+    <string name="category3">Chocolates</string>
+    <string name="category5">Gifts</string>
 
 </resources>
