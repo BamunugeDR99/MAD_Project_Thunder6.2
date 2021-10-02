@@ -41,6 +41,10 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         holder.date.setText("Purchase on" + model.getDate());
 
 
+
+
+
+
         Glide.with(holder.img.getContext())
                 .load(model.getImg())
                 .placeholder(R.drawable.common_google_signin_btn_icon_dark)

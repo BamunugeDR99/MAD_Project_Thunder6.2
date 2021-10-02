@@ -28,5 +28,15 @@
     <string name="Text_111" />
     <string name="ItemPricw">Item Price</string>
     <string name="Date">Purchased Date</string>
+    <string name="PriceView">Price</string>
+    <string name="ProductName">ProductName</string>
+    <string name="RateNo">NoOfRatings</string>
+    <string name="Quantity">Quantity</string>
+    <string name="Description">Description</string>
+    <string name="Reviews">Reviews</string>
+    <string name="CartBtn">Add to Cart</string>
+    <string name="addButton">+</string>
+    <string name="removeBtn">-</string>
+    <string name="quantity">1</string>
 
 </resources>
