@@ -54,6 +54,10 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
 
 
 
+
+
+
+
         Glide.with(holder.img.getContext())
                 .load(model.getImg())
                 .placeholder(R.drawable.common_google_signin_btn_icon_dark)

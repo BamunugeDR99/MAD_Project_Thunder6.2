@@ -42,8 +42,10 @@ public class myPurchases extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("myPurchases"), purchases.class)
                         .build();
 
+        System.out.println("--------------------------------------------------------------");
 
         mainAdapter = new MainAdapter(options);
+
 
         RV_1.setAdapter(mainAdapter);
 

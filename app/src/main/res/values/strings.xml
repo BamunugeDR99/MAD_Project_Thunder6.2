@@ -28,5 +28,23 @@
     <string name="Text_111" />
     <string name="ItemPricw">Item Price</string>
     <string name="Date">Purchased Date</string>
+    <string name="PriceView">Price</string>
+    <string name="ProductName">ProductName</string>
+    <string name="RateNo">NoOfRatings</string>
+    <string name="Quantity">Quantity</string>
+    <string name="Description">Description</string>
+    <string name="Reviews">Reviews</string>
+    <string name="CartBtn">Add to Cart</string>
+    <string name="addButton">+</string>
+    <string name="removeBtn">-</string>
+    <string name="quantity">1</string>
+    <string name="appName">Sunset Gifts</string>
+    <string name="Trending">Trending Now</string>
+    <string name="heading2">Bring Joy To Your Loved ones</string>
+    <string name="category1">Cakes</string>
+    <string name="category2">Combos</string>
+    <string name="category4">Flowers</string>
+    <string name="category3">Chocolates</string>
+    <string name="category5">Gifts</string>
 
 </resources>

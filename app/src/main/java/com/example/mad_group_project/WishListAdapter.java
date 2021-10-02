@@ -94,24 +94,6 @@ public class  WishListAdapter extends FirebaseRecyclerAdapter<WishListModel, Wis
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     @NonNull
