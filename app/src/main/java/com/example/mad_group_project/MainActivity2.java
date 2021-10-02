@@ -68,16 +68,16 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
 //                startActivity(intent);
                 break;
             case R.id.nav_profile:
-                Intent intent1 = new Intent(MainActivity2.this, user_profile.class);
+                Intent intent1 = new Intent(MainActivity2.this, edit_profile.class);
                 startActivity(intent1);
                 break;
             case R.id.nav_wishlist:
-//                Intent intent2 = new Intent(MainActivity2.this, contactus.class);
-//                startActivity(intent2);
+                Intent intent2 = new Intent(MainActivity2.this, WishList.class);
+                startActivity(intent2);
                 break;
             case R.id.nav_cart:
-//                Intent intent3 = new Intent(MainActivity2.this, your_reviews.class);
-//                startActivity(intent3);
+                Intent intent3 = new Intent(MainActivity2.this, myPurchases.class);
+                startActivity(intent3);
                 break;
             case R.id.nav_reviews:
                 Intent intent4 = new Intent(MainActivity2.this, your_reviews.class);

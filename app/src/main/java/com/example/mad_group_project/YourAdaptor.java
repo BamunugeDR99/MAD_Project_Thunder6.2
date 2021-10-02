@@ -53,7 +53,7 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
         Glide.with(holder.img.getContext())
                 .load(model.getImageurl())
                 .placeholder(R.drawable.common_google_signin_btn_icon_dark)
-                .circleCrop()
+//                .circleCrop()
                 .error(R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
 
@@ -131,8 +131,8 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
 
     class myViewHolder extends RecyclerView.ViewHolder{
         ///////////////////////
-        CircleImageView img;
-        //        ImageView img;
+//        CircleImageView img;
+        ImageView img;
         TextView name,description;
         Button btn_edit, btn_delete;
 
@@ -142,8 +142,8 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
 
 
 
-            img = (CircleImageView)itemView.findViewById(R.id.img);
-//            img = (ImageView)itemView.findViewById(R.id.img);
+//            img = (CircleImageView)itemView.findViewById(R.id.img);
+            img = (ImageView)itemView.findViewById(R.id.img);
             name = (TextView)itemView.findViewById(R.id.rev_name);
             description = (TextView)itemView.findViewById(R.id.rev_review);
 

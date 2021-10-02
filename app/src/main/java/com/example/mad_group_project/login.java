@@ -61,7 +61,7 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            startActivity(new Intent(getApplicationContext(),user_profile.class));
+                            startActivity(new Intent(getApplicationContext(),MainActivity2.class));
                             Toast.makeText(getApplicationContext(),"Successful", Toast.LENGTH_SHORT).show();
                             mDialog.dismiss();
                         }
@@ -77,7 +77,7 @@ public class login extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),registration.class));
+                startActivity(new Intent(getApplicationContext(),sign_up_page.class));
             }
         });
     }

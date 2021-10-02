@@ -2,6 +2,8 @@ package com.example.mad_group_project;
 
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -21,6 +24,8 @@ import org.jetbrains.annotations.NotNull;
 //Used to main_item to recycler view
 public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.myViewHolder> {
 
+    int TotalPrice =0;
+    Context context;
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -39,6 +44,14 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         holder.name.setText(model.getName());
         holder.price.setText("Rs." + model.getPrice().toString());
         holder.date.setText("Purchase on" + model.getDate());
+
+//// Calc Total Amount
+        TotalPrice = (int) (TotalPrice + model.getPrice());
+        Intent intent = new Intent("Total Spending");
+        intent.putExtra("TotalPrice",TotalPrice);
+
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
 
 
         Glide.with(holder.img.getContext())
@@ -65,6 +78,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         //CircleImageView img;
         ImageView img;
         TextView name,price,date;
+
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -103,7 +103,7 @@ public class your_reviews extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()){
             case R.id.nav_home:
-//                Intent intent = new Intent(MainActivity2.this, contactus.class);
+//                Intent intent = new Intent(your_reviews.this, contactus.class);
 //                startActivity(intent);
                 break;
             case R.id.nav_profile:
@@ -111,12 +111,12 @@ public class your_reviews extends AppCompatActivity implements NavigationView.On
                 startActivity(intent1);
                 break;
             case R.id.nav_wishlist:
-//                Intent intent2 = new Intent(MainActivity2.this, contactus.class);
-//                startActivity(intent2);
+                Intent intent2 = new Intent(your_reviews.this, WishList.class);
+                startActivity(intent2);
                 break;
             case R.id.nav_cart:
-//                Intent intent3 = new Intent(MainActivity2.this, your_reviews.class);
-//                startActivity(intent3);
+                Intent intent3 = new Intent(your_reviews.this, myPurchases.class);
+                startActivity(intent3);
                 break;
             case R.id.nav_reviews:
 //                Intent intent4 = new Intent(your_reviews.this, your_reviews.class);
