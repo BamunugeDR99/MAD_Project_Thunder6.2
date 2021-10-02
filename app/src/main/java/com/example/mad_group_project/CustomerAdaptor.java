@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +43,7 @@ public class CustomerAdaptor extends FirebaseRecyclerAdapter<cusreview, Customer
 
         holder.name.setText(model.getCusname());
         holder.description.setText(model.getCusdescription());
+        holder.rating.setRating(Float.parseFloat(model.getRating()));
 
         Glide.with(holder.img.getContext())
                 .load(model.getCusurl())
@@ -62,13 +64,14 @@ public class CustomerAdaptor extends FirebaseRecyclerAdapter<cusreview, Customer
     class myViewHolder extends RecyclerView.ViewHolder{
         CircleImageView img;
         TextView name,description;
+        RatingBar rating;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             img = (CircleImageView)itemView.findViewById(R.id.img1);
             name = (TextView)itemView.findViewById(R.id.item_name);
             description = (TextView)itemView.findViewById(R.id.item_review);
-
+            rating=(RatingBar)itemView.findViewById(R.id.rating);
 
 
         }
