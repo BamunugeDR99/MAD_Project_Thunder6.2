@@ -71,7 +71,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class user_profile extends AppCompatActivity {
 
-    EditText username,name, email,number, address;
+    TextView username,name, email,number, address;
     Uri filepath;
     ImageView img;
 
@@ -101,117 +101,116 @@ public class user_profile extends AppCompatActivity {
 
 
         img=(ImageView)findViewById(R.id.p_image);
-        edit=(ImageButton)findViewById(R.id.edit_img);
 
         btnUpdate=(Button) findViewById(R.id.btn_up);
 
         btnDelete=findViewById(R.id.btn_del);
 
-                edit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Dexter.withActivity(user_profile.this)
-                                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                                .withListener(new PermissionListener() {
-                                    @Override
-                                    public void onPermissionGranted(PermissionGrantedResponse response) {
-                                        Intent intent = new Intent(Intent.ACTION_PICK);
-                                        intent.setType("image/*");
-                                        startActivityForResult(Intent.createChooser(intent, "Select Image File"),1);
-                                    }
-
-                                    @Override
-                                    public void onPermissionDenied(PermissionDeniedResponse response) {
-
-                                    }
-
-                                    @Override
-                                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-                                        token.continuePermissionRequest();
-                                    }
-                                }).check();
-                    }
-                });
-
-                btnUpdate.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        uploadtofirebase();
-                    }
-                });
+//                edit.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Dexter.withActivity(user_profile.this)
+//                                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+//                                .withListener(new PermissionListener() {
+//                                    @Override
+//                                    public void onPermissionGranted(PermissionGrantedResponse response) {
+//                                        Intent intent = new Intent(Intent.ACTION_PICK);
+//                                        intent.setType("image/*");
+//                                        startActivityForResult(Intent.createChooser(intent, "Select Image File"),1);
+//                                    }
+//
+//                                    @Override
+//                                    public void onPermissionDenied(PermissionDeniedResponse response) {
+//
+//                                    }
+//
+//                                    @Override
+//                                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+//                                        token.continuePermissionRequest();
+//                                    }
+//                                }).check();
+//                    }
+//                });
+//
+//                btnUpdate.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        uploadtofirebase();
+//                    }
+//                });
 
 //        acc = new User();
     }
 
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode==1 && resultCode == RESULT_OK){
-            filepath=data.getData();
-            try {
-                InputStream inputStream= getContentResolver().openInputStream(filepath);
-                bitmap= BitmapFactory.decodeStream(inputStream);
-                img.setImageBitmap(bitmap);
-            }catch (Exception ex){
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        if (requestCode==1 && resultCode == RESULT_OK){
+//            filepath=data.getData();
+//            try {
+//                InputStream inputStream= getContentResolver().openInputStream(filepath);
+//                bitmap= BitmapFactory.decodeStream(inputStream);
+//                img.setImageBitmap(bitmap);
+//            }catch (Exception ex){
+//
+//            }
+//        }
+//        super.onActivityResult(requestCode, resultCode, data);
+//    }
 
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+//    private void uploadtofirebase() {
+//
+//        ProgressDialog dialog=new ProgressDialog(this);
+//        dialog.setTitle("File Uploader");
+//        dialog.show();
+//
+//        name=findViewById(R.id.p_name);
+//        email=findViewById(R.id.p_email);
+//        number=findViewById(R.id.p_number);
+//        address=findViewById(R.id.p_address);
+//        username=findViewById(R.id.p_username);
 
-    private void uploadtofirebase() {
-
-        ProgressDialog dialog=new ProgressDialog(this);
-        dialog.setTitle("File Uploader");
-        dialog.show();
-
-        name=findViewById(R.id.p_name);
-        email=findViewById(R.id.p_email);
-        number=findViewById(R.id.p_number);
-        address=findViewById(R.id.p_address);
-        username=findViewById(R.id.p_username);
-
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference root =db.getReference();
-
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference uploader = storage.getReference("Image1"+new Random().nextInt(50));
-
-        uploader.putFile(filepath)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-
-                                dialog.dismiss();
-                                FirebaseDatabase db = FirebaseDatabase.getInstance();
-                                DatabaseReference root= db.getReference("Account");
-
-                                User obj = new User(name.getText().toString(),username.getText().toString(),email.getText().toString(),address.getText().toString(),number.getText().toString(),uri.toString());
-                                root.child(name.getText().toString()).setValue(obj);
-
-//                                name.setText("");
-//                                email.setText("");
-//                                number.setText("");
-//                                address.setText("");
-//                                username.setText("");
-                                img.setImageResource(R.drawable.ic_launcher_background);
-                                Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_LONG).show();
-                            }
-                        });
-                    }
-                })
-                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                        float percent=(100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
-                        dialog.setMessage("Uploaded :"+(int)percent+" %");
-                    }
-                });
-    }
+//        FirebaseDatabase db = FirebaseDatabase.getInstance();
+//        DatabaseReference root =db.getReference();
+//
+//        FirebaseStorage storage = FirebaseStorage.getInstance();
+//        StorageReference uploader = storage.getReference("Image1"+new Random().nextInt(50));
+//
+//        uploader.putFile(filepath)
+//                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                        uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                            @Override
+//                            public void onSuccess(Uri uri) {
+//
+//                                dialog.dismiss();
+//                                FirebaseDatabase db = FirebaseDatabase.getInstance();
+//                                DatabaseReference root= db.getReference("Account");
+//
+//                                User obj = new User(name.getText().toString(),username.getText().toString(),email.getText().toString(),address.getText().toString(),number.getText().toString(),uri.toString());
+//                                root.child(name.getText().toString()).setValue(obj);
+//
+////                                name.setText("");
+////                                email.setText("");
+////                                number.setText("");
+////                                address.setText("");
+////                                username.setText("");
+//                                img.setImageResource(R.drawable.ic_launcher_background);
+//                                Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_LONG).show();
+//                            }
+//                        });
+//                    }
+//                })
+//                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+//                        float percent=(100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
+//                        dialog.setMessage("Uploaded :"+(int)percent+" %");
+//                    }
+//                });
+//    }
 
     //Method to clear all user Inputs
 //    public void clearFields(){
@@ -225,62 +224,62 @@ public class user_profile extends AppCompatActivity {
 //    }
 /////show/////
 
-
-    public void Show(View view){
-
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Account").child("abc");
-
-        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                if(dataSnapshot.hasChildren()){
-
-                    name.setText(dataSnapshot.child("name").getValue().toString());
-                    number.setText(dataSnapshot.child("number").getValue().toString());
-                    email.setText(dataSnapshot.child("email").getValue().toString());
-                    address.setText(dataSnapshot.child("address").getValue().toString());
-                    username.setText(dataSnapshot.child("username").getValue().toString());
-//                    img.setImageBitmap(dataSnapshot.child("profileurl").getValue().toString());
-                }
-                else{
-
-                    Toast.makeText(getApplicationContext(), "No Source to Display", Toast.LENGTH_SHORT).show();
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-                storageReference = FirebaseStorage.getInstance().getReference().child("Image131.jpeg");
-
-                try{
-                    final File localFile = File.createTempFile("Image131","jpeg");
-                    storageReference.getFile(localFile)
-                            .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                    Toast.makeText(user_profile.this, "Pictured Retrieved", Toast.LENGTH_SHORT).show();
-                                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                                    ((ImageView)findViewById(R.id.p_image)).setImageBitmap(bitmap);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(user_profile.this, "Error Occurred", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
-
-
-    }
+//
+//    public void Show(View view){
+//
+//        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Account").child("abc");
+//
+//        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                if(dataSnapshot.hasChildren()){
+//
+//                    name.setText(dataSnapshot.child("name").getValue().toString());
+//                    number.setText(dataSnapshot.child("number").getValue().toString());
+//                    email.setText(dataSnapshot.child("email").getValue().toString());
+//                    address.setText(dataSnapshot.child("address").getValue().toString());
+//                    username.setText(dataSnapshot.child("username").getValue().toString());
+////                    img.setImageBitmap(dataSnapshot.child("profileurl").getValue().toString());
+//                }
+//                else{
+//
+//                    Toast.makeText(getApplicationContext(), "No Source to Display", Toast.LENGTH_SHORT).show();
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//                storageReference = FirebaseStorage.getInstance().getReference().child("Image131.jpeg");
+//
+//                try{
+//                    final File localFile = File.createTempFile("Image131","jpeg");
+//                    storageReference.getFile(localFile)
+//                            .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+//                                @Override
+//                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+//                                    Toast.makeText(user_profile.this, "Pictured Retrieved", Toast.LENGTH_SHORT).show();
+//                                    Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+//                                    ((ImageView)findViewById(R.id.p_image)).setImageBitmap(bitmap);
+//                                }
+//                            }).addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Toast.makeText(user_profile.this, "Error Occurred", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//
+//                }catch (IOException e){
+//                    e.printStackTrace();
+//                }
+//
+//
+//    }
 
     ///Update//////
 
@@ -319,30 +318,30 @@ public class user_profile extends AppCompatActivity {
 
     ////Delete/////
 
-
-    public void Delete(View view){
-        DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Account");
-        delRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull  DataSnapshot snapshot) {
-
-                if (snapshot.hasChild(("AC5"))){
-                    db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC3");
-                    db.removeValue();
-//                    clearFields();
-                    Toast.makeText(getApplicationContext(), "Data Deleted Successfully" , Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(user_profile.this, registration.class);
-                        startActivity(intent);
-                }
-                else{
-                    Toast.makeText(getApplicationContext(), "No Source to Delete", Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
-    }
+//
+//    public void Delete(View view){
+//        DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Account");
+//        delRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull  DataSnapshot snapshot) {
+//
+//                if (snapshot.hasChild(("AC5"))){
+//                    db = FirebaseDatabase.getInstance().getReference().child("Account").child("AC3");
+//                    db.removeValue();
+////                    clearFields();
+//                    Toast.makeText(getApplicationContext(), "Data Deleted Successfully" , Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(user_profile.this, registration.class);
+//                        startActivity(intent);
+//                }
+//                else{
+//                    Toast.makeText(getApplicationContext(), "No Source to Delete", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//            }
+//        });
+//    }
 /////select photo/////
 
 
