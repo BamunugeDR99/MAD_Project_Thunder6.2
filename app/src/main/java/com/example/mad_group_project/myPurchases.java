@@ -22,7 +22,7 @@ public class myPurchases extends AppCompatActivity {
     TextView TAmount;
     int overAllTotalPrice;
 
-//    private Long TotalPrice= Long.valueOf(0);
+
 
     MainAdapter mainAdapter;
     @Override
