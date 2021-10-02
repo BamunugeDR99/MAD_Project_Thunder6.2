@@ -2,6 +2,7 @@ package com.example.mad_group_project;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,6 +62,8 @@ public class  WishListAdapter extends FirebaseRecyclerAdapter<WishListModel, Wis
         holder.wl_btn_remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(holder.Itemname.getContext());
                 builder.setTitle("Are you sure tou want to delete?");

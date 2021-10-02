@@ -1,5 +1,6 @@
 package com.example.mad_group_project;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -111,6 +112,12 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
 
 
                         Log.d("Button Message", "Ebuwa");
+
+
+                        Intent intent = new Intent(holder.img.getContext(), customer_reviews.class);
+                        holder.img.getContext().startActivity(intent);
+
+
                     }
                 });
 
