@@ -7,6 +7,29 @@
     tools:context=".sign_up_page">
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sign_up"
+                android:layout_width="119dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:text="Sign Up"
+                android:textColor="#171616"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.157"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="90dp"
@@ -19,19 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_up" />
 
-    <TextView
-        android:id="@+id/sign_up"
-        android:layout_width="119dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp"
-        android:text="Sign Up"
-        android:textColor="#171616"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layout_firstname"
@@ -53,8 +63,9 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/firstname"
-            android:layout_width="319dp"
-            android:layout_height="52dp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,8 +88,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/lastname"
-            android:layout_width="319dp"
-            android:layout_height="52dp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -102,8 +113,8 @@
 
         <EditText
             android:id="@+id/input_email"
-            android:layout_width="319dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textEmailAddress" />
@@ -128,8 +139,8 @@
 
         <EditText
             android:id="@+id/postal_address"
-            android:layout_width="319dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPostalAddress" />
@@ -154,8 +165,8 @@
 
         <EditText
             android:id="@+id/phone_number"
-            android:layout_width="319dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="numberDecimal" />
@@ -180,8 +191,8 @@
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="319dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPassword" />
@@ -206,8 +217,8 @@
 
         <EditText
             android:id="@+id/et_confirm_password"
-            android:layout_width="319dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPassword" />
@@ -273,6 +284,7 @@
         android:text="log in"
         android:textColor="@color/purple_700"
         android:textColorLink="@color/purple_700"
+        android:onClick="login"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -294,5 +306,7 @@
         app:srcCompat="@drawable/ic_baseline_camera_alt_24"
         tools:ignore="VectorDrawableCompat" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -91,7 +91,7 @@ public class WishList extends AppCompatActivity implements NavigationView.OnNavi
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_wishlist);
 
     }
 
@@ -178,20 +178,24 @@ public class WishList extends AppCompatActivity implements NavigationView.OnNavi
 
         switch (item.getItemId()){
             case R.id.nav_home:
-                Intent intent = new Intent(WishList.this, contactus.class);
+                Intent intent = new Intent(WishList.this, HomeUI.class);
                 startActivity(intent);
                 break;
             case R.id.nav_profile:
-                Intent intent1 = new Intent(WishList.this, edit_profile.class);
+                Intent intent1 = new Intent(WishList.this, user_profile.class);
                 startActivity(intent1);
                 break;
             case R.id.nav_wishlist:
 //                Intent intent2 = new Intent(WishList.this, WishList.class);
 //                startActivity(intent2);
                 break;
-            case R.id.nav_cart:
+            case R.id.nav_purchases:
                 Intent intent3 = new Intent(WishList.this, myPurchases.class);
                 startActivity(intent3);
+                break;
+            case R.id.nav_cart:
+                Intent intent7 = new Intent(WishList.this, edit_cart.class);
+                startActivity(intent7);
                 break;
             case R.id.nav_reviews:
                 Intent intent4 = new Intent(WishList.this, your_reviews.class);

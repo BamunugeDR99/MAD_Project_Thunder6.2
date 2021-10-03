@@ -32,7 +32,6 @@ public class CakeItems extends AppCompatActivity {
 
 
 
-
         FirebaseRecyclerOptions<ItemModel> options =
                 new FirebaseRecyclerOptions.Builder<ItemModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Items").child("Cakes"), ItemModel.class)

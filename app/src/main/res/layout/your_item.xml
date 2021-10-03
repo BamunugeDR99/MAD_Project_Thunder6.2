@@ -58,8 +58,12 @@
             android:layout_toEndOf="@+id/img"
             android:layout_toRightOf="@+id/img"
 
+
             android:progressBackgroundTint="#FFEB3B"
             android:progressTint="#FFEB3B"
+
+            android:clickable="false"
+
             android:numStars="5" />
 
         <TextView
