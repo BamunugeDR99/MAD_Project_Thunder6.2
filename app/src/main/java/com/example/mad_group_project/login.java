@@ -61,7 +61,7 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                            startActivity(new Intent(getApplicationContext(),HomeUI.class));
                             Toast.makeText(getApplicationContext(),"Successful", Toast.LENGTH_SHORT).show();
                             mDialog.dismiss();
                         }
