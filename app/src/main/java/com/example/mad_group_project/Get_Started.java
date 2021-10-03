@@ -19,7 +19,7 @@ public class Get_Started extends AppCompatActivity {
         setContentView(R.layout.activity_get_started);
 
     start=findViewById(R.id.start);
-    logo=findViewById(R.id.logo);
+    logo=findViewById(R.id.logo2);
 
     }
 

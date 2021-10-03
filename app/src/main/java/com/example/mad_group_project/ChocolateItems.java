@@ -24,6 +24,8 @@ public class ChocolateItems extends AppCompatActivity {
 
         Item_rv = (RecyclerView) findViewById(R.id.Item_RV);
 
+        Item_rv.setItemAnimator(null);
+
         layoutManager = new GridLayoutManager(this, 2);
 
         Item_rv.setLayoutManager(layoutManager);

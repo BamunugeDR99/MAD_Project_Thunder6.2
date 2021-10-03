@@ -4,7 +4,11 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -22,6 +26,7 @@ import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.renderscript.ScriptGroup;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,8 +37,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -56,36 +64,25 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
+import com.squareup.picasso.Picasso;
 
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class user_profile extends AppCompatActivity {
+public class user_profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     TextView username, name, email, number, address;
-    Uri filepath;
-    ImageView img;
 
-    Button btnUpdate, btnDelete;
-    ImageButton edit;
-    Bitmap bitmap;
+    DrawerLayout drawer;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
-    DatabaseReference dbRef;
-
-    StorageReference storageReference;
+    CircleImageView profile_image;
 
     User acc;
-
-    int TAKE_IMAGE_CODE = 1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,20 +94,112 @@ public class user_profile extends AppCompatActivity {
         number = findViewById(R.id.p_number);
         address = findViewById(R.id.p_address);
         username = findViewById(R.id.p_username);
-//        username = findViewById(R.id.edit_fn);
-//        edit_ln = findViewById(R.id.edit_ln);
-//        edit_email= findViewById(R.id.edit_email);
-//        edit_add = findViewById(R.id.edit_add);
-//        edit_phone = findViewById(R.id.edit_phone);
-//        current_password = findViewById(R.id.current_password);
-//        new_password = findViewById(R.id.new_password);
-//        confirm_password = findViewById(R.id.confirm_password);
-//        profile_image = findViewById(R.id.profile_image);
-//        update_btn = findViewById(R.id.update_btn);
-//        delete_btn = findViewById(R.id.deletePbtn);
-//        Upload_image = findViewById(R.id.Upload_image);
+        profile_image = findViewById(R.id.profile_image);
+
 
 //        dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("aAMe4dwdPdZsqgNTdWztSBaTD512");// id **
 //        storageReference = FirebaseStorage.getInstance().getReference();
+
+
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("aAMe4dwdPdZsqgNTdWztSBaTD512");
+
+        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                if(dataSnapshot.hasChildren()){
+
+                    username.setText(dataSnapshot.child("firstname").getValue().toString());
+                    name.setText(dataSnapshot.child("lastname").getValue().toString());
+                    address.setText(dataSnapshot.child("postal_address").getValue().toString());
+                    number.setText(dataSnapshot.child("phone_number").getValue().toString());
+                    email.setText(dataSnapshot.child("input_email").getValue().toString());
+                    String link = dataSnapshot.child("profile_image").getValue(String.class);
+                    Picasso.get().load(link).into(profile_image);
+
+                }
+                else{
+
+                    Toast.makeText(getApplicationContext(), "No Source to Display", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull  DatabaseError error) {
+
+            }
+        });
+
+
+        drawer = findViewById(R.id.drawer_layout);
+        toolbar = findViewById(R.id.toolbar);
+        navigationView = findViewById(R.id.nav_view);
+
+        setSupportActionBar(toolbar);
+
+//        Menu menu = navigationView.getMenu();
+//        menu.findItem(R.id.nav_logout).setVisible(false);
+
+//        navigationView.bringChildToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
+
+        navigationView.setCheckedItem(R.id.nav_profile);
     }
+
+    public void edit(View view) {
+        Intent intent = new Intent(user_profile.this, edit_profile.class);
+               startActivity(intent);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        }else {
+            super.onBackPressed();
+        }
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.nav_home:
+                Intent intent = new Intent(user_profile.this, HomeUI.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_profile:
+//                Intent intent1 = new Intent(user_profile.this, edit_profile.class);
+//                startActivity(intent1);
+                break;
+            case R.id.nav_wishlist:
+                Intent intent2 = new Intent(user_profile.this, WishList.class);
+                startActivity(intent2);
+                break;
+            case R.id.nav_cart:
+                Intent intent3 = new Intent(user_profile.this, myPurchases.class);
+                startActivity(intent3);
+                break;
+            case R.id.nav_reviews:
+                Intent intent4 = new Intent(user_profile.this, your_reviews.class);
+                startActivity(intent4);
+                break;
+            case R.id.nav_contact:
+                Intent intent5 = new Intent(user_profile.this, contactus.class);
+                startActivity(intent5);
+                break;
+            case R.id.nav_logout:
+                Intent intent6 = new Intent(user_profile.this, login.class);
+                startActivity(intent6);
+                break;
+        }
+        return true;
+    }
+
 }

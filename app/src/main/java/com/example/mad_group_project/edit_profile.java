@@ -50,7 +50,7 @@ public class edit_profile extends AppCompatActivity {
 
     EditText edit_fn, edit_ln, edit_email,  edit_add,  edit_phone, current_password, new_password,confirm_password;
     Button update_btn, delete_btn;
-    ImageButton Upload_image;
+    ImageButton Upload_image, image_btn;
     DatabaseReference dbRef, dbRef2;
     StorageReference storageReference;
 
@@ -68,6 +68,15 @@ public class edit_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_edit_profile);
+
+        image_btn=(ImageButton) findViewById(R.id.imgbtn);
+
+        image_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         edit_fn = findViewById(R.id.edit_fn);
         edit_ln = findViewById(R.id.edit_ln);

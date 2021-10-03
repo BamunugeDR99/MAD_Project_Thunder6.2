@@ -69,7 +69,7 @@ public class your_reviews extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_reviews);
     }
 
 
@@ -103,8 +103,8 @@ public class your_reviews extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()){
             case R.id.nav_home:
-//                Intent intent = new Intent(your_reviews.this, contactus.class);
-//                startActivity(intent);
+                Intent intent = new Intent(your_reviews.this, HomeUI.class);
+                startActivity(intent);
                 break;
             case R.id.nav_profile:
                 Intent intent1 = new Intent(your_reviews.this, user_profile.class);
@@ -114,9 +114,13 @@ public class your_reviews extends AppCompatActivity implements NavigationView.On
                 Intent intent2 = new Intent(your_reviews.this, WishList.class);
                 startActivity(intent2);
                 break;
-            case R.id.nav_cart:
+            case R.id.nav_purchases:
                 Intent intent3 = new Intent(your_reviews.this, myPurchases.class);
                 startActivity(intent3);
+                break;
+            case R.id.nav_cart:
+                Intent intent7 = new Intent(your_reviews.this, edit_cart.class);
+                startActivity(intent7);
                 break;
             case R.id.nav_reviews:
 //                Intent intent4 = new Intent(your_reviews.this, your_reviews.class);
