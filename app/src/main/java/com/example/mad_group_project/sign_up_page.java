@@ -260,36 +260,10 @@ public class sign_up_page extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public void login(View view) {
+        Intent intent = new Intent(sign_up_page.this,login.class);
+        startActivity(intent);
+    }
 
 
 //    protected void onResume(){

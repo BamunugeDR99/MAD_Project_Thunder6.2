@@ -68,7 +68,7 @@ public class contactus extends AppCompatActivity implements NavigationView.OnNav
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_contact);
     }
     public void Save(View view){
         db = FirebaseDatabase.getInstance().getReference().child("Contact");
@@ -104,20 +104,24 @@ public class contactus extends AppCompatActivity implements NavigationView.OnNav
 
         switch (item.getItemId()){
             case R.id.nav_home:
-//                Intent intent = new Intent(contactus.this, contactus.class);
-//                startActivity(intent);
+                Intent intent = new Intent(contactus.this, HomeUI.class);
+                startActivity(intent);
                 break;
             case R.id.nav_profile:
-                Intent intent1 = new Intent(contactus.this, edit_profile.class);
+                Intent intent1 = new Intent(contactus.this, user_profile.class);
                 startActivity(intent1);
                 break;
             case R.id.nav_wishlist:
                 Intent intent2 = new Intent(contactus.this, WishList.class);
                 startActivity(intent2);
                 break;
-            case R.id.nav_cart:
+            case R.id.nav_purchases:
                 Intent intent3 = new Intent(contactus.this, myPurchases.class);
                 startActivity(intent3);
+                break;
+            case R.id.nav_cart:
+                Intent intent7 = new Intent(contactus.this, edit_cart.class);
+                startActivity(intent7);
                 break;
             case R.id.nav_reviews:
                 Intent intent4 = new Intent(contactus.this, your_reviews.class);
