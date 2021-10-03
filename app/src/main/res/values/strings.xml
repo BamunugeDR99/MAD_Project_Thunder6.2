@@ -46,5 +46,11 @@
     <string name="category4">Flowers</string>
     <string name="category3">Chocolates</string>
     <string name="category5">Gifts</string>
+    <string name="invalid_name" />
+    <string name="invalidL_name" />
+    <string name="invalid_email" />
+    <string name="invali_mobile" />
+    <string name="invalid_address" />
+    <string name="invalid_Cpassword" />
 
 </resources>

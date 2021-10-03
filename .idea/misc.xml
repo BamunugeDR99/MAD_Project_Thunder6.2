@@ -11,18 +11,23 @@
         <entry key="..\:/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_view_card.xml" value="0.24010416666666667" />
         <entry key="..\:/MAD_Project_Thunder6.2/app/src/main/res/layout/main_item.xml" value="0.434850863422292" />
         <entry key="..\:/MAD_Project_Thunder6.2/app/src/main/res/layout/view_card_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/add_i.xml" value="0.2703125" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/back_design.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/back_design2.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/back_design3.xml" value="0.2518518518518518" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/ed_design.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/ed_design2.xml" value="0.25462962962962965" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/i_remove.xml" value="0.2703125" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/drawable/search_icon.xml" value="0.25462962962962965" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout-w1240dp/activity_edit_cart.xml" value="0.199609375" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout-w1240dp/activity_sign_up_page.xml" value="0.183203125" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout-w1240dp/edit_cart_main.xml" value="0.199609375" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_add_card.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_contact.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_contactus.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_createreview.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_customer_reviews.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_edit_cart.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_edit_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_get_started.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_home_ui.xml" value="0.25416666666666665" />
@@ -41,6 +46,7 @@
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_your_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/activity_your_reviews.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/customer_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/edit_cart_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/fragment_message.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/main_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/THARINDU/AndroidStudioProjects/MAD_Project_Thunder6.2/app/src/main/res/layout/nav_header.xml" value="0.25416666666666665" />

@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,6 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -49,7 +53,7 @@ public class sign_up_page extends AppCompatActivity {
     Button button_signup;
     ImageButton Upload_image;
     CircleImageView profile_image;
-    Customer CusObj;
+//    Customer CusObj;
     DatabaseReference dbRef;
     //    FirebaseDatabase database;
     FirebaseAuth auth;
@@ -57,8 +61,7 @@ public class sign_up_page extends AppCompatActivity {
     FirebaseUser firebaseUser;
     Uri filepath;
     Bitmap bitmap;
-//    private static final int PICK_IMAGE_REQUEST = 1;
-
+    AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,11 +102,49 @@ public class sign_up_page extends AppCompatActivity {
             }
         });
 
+        //Initialize validation style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+        //add validation for first name
+        awesomeValidation.addValidation(this,R.id.firstname, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+
+        //add validation for last name
+        awesomeValidation.addValidation(this,R.id.lastname, RegexTemplate.NOT_EMPTY,R.string.invalidL_name);
+
+        //add validation for email
+        awesomeValidation.addValidation(this,R.id.input_email, Patterns.EMAIL_ADDRESS,R.string.invalid_email);
+
+        //add validation for phone number
+        awesomeValidation.addValidation(this,R.id.phone_number,"[0-9]{3}[0-9]{3}[0-9]{4}$",R.string.invali_mobile);
+
+        //add validation for address
+        awesomeValidation.addValidation(this,R.id.postal_address, RegexTemplate.NOT_EMPTY,R.string.invalid_address);
+
+        //add validation for password
+        awesomeValidation.addValidation(this,R.id.password,"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$",R.string.invalid_password);
+
+        //add validation to check passwords are same
+        awesomeValidation.addValidation(this,R.id.et_confirm_password, R.id.password ,R.string.invalid_Cpassword);
+
+
+
 
         button_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uploadtofirebase();
+
+                if (awesomeValidation.validate()){
+
+                        uploadtofirebase();
+
+                }else{
+
+                    Toast.makeText(getApplicationContext(),
+                    "Validation Failed", Toast.LENGTH_SHORT).show();
+                }
+
+
+
             }
         });
 
@@ -129,91 +170,92 @@ public class sign_up_page extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-
     private void uploadtofirebase() {
 
+        if(filepath == null){
 
-        final ProgressDialog dialog=new ProgressDialog(this);
-        dialog.setTitle("File Uploader");
-        dialog.show();
+            Toast.makeText(this, "Please Select a Profile Image", Toast.LENGTH_SHORT).show();
+
+        }else {
+
+               final ProgressDialog dialog = new ProgressDialog(this);
+               dialog.setTitle("File Uploader");
+               dialog.show();
 
 
-        firstname = findViewById(R.id.firstname);
-        lastname = findViewById(R.id.lastname);
-        input_email = findViewById(R.id.input_email);
-        postal_address = findViewById(R.id.postal_address);
-        phone_number = findViewById(R.id.phone_number);
-        password = findViewById(R.id.password);
-        et_confirm_password = findViewById(R.id.et_confirm_password);
-        terms = findViewById(R.id.terms);
+               firstname = findViewById(R.id.firstname);
+               lastname = findViewById(R.id.lastname);
+               input_email = findViewById(R.id.input_email);
+               postal_address = findViewById(R.id.postal_address);
+               phone_number = findViewById(R.id.phone_number);
+               password = findViewById(R.id.password);
+               et_confirm_password = findViewById(R.id.et_confirm_password);
+               terms = findViewById(R.id.terms);
 
 
 //        dbRef = FirebaseDatabase.getInstance().getReference().child("Customer");
-        auth = FirebaseAuth.getInstance();
+               auth = FirebaseAuth.getInstance();
 
-        FirebaseStorage storage=FirebaseStorage.getInstance();
-        final StorageReference uploader=storage.getReference("Image1"+new Random().nextInt(50));
+               FirebaseStorage storage = FirebaseStorage.getInstance();
+               final StorageReference uploader = storage.getReference("Image1" + new Random().nextInt(50));
 
-        uploader.putFile(filepath)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot)
-                    {
-                        uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri){
+               uploader.putFile(filepath)
+                       .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                           @Override
+                           public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                               uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                   @Override
+                                   public void onSuccess(Uri uri) {
 
-                                dialog.dismiss();
-                                FirebaseDatabase db=FirebaseDatabase.getInstance();
-                                DatabaseReference dbref = db.getReference("Customer");
-                                String Email = input_email.getText().toString().trim();
-                                String Password =password.getText().toString().trim();
-                                auth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if(task.isSuccessful()){
-                                            Toast.makeText(sign_up_page.this, "User created", Toast.LENGTH_SHORT).show();
-                                            Customer obj=new Customer(firstname.getText().toString(),lastname.getText().toString(),input_email.getText().toString(),postal_address.getText().toString(),phone_number.getText().toString(),password.getText().toString(),uri.toString());
-                                            firebaseUser = auth.getCurrentUser();
-                                            dbref.child(firebaseUser.getUid()).setValue(obj).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                    if(task.isSuccessful()){
-                                                        Toast.makeText(sign_up_page.this, "User added", Toast.LENGTH_SHORT).show();
-                                                        String ConfirmPassword = et_confirm_password.getText().toString();
+                                       dialog.dismiss();
+                                       FirebaseDatabase db = FirebaseDatabase.getInstance();
+                                       DatabaseReference dbref = db.getReference("Customer");
+                                       String Email = input_email.getText().toString().trim();
+                                       String Password = password.getText().toString().trim();
+                                       auth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<AuthResult> task) {
+                                               if (task.isSuccessful()) {
+                                                   Toast.makeText(sign_up_page.this, "User created", Toast.LENGTH_SHORT).show();
+                                                   Customer obj = new Customer(firstname.getText().toString(), lastname.getText().toString(), input_email.getText().toString(), postal_address.getText().toString(), phone_number.getText().toString(), password.getText().toString(), uri.toString());
+                                                   firebaseUser = auth.getCurrentUser();
+                                                   dbref.child(firebaseUser.getUid()).setValue(obj).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                       @Override
+                                                       public void onComplete(@NonNull Task<Void> task) {
+                                                           if (task.isSuccessful()) {
+                                                               Toast.makeText(sign_up_page.this, "User added", Toast.LENGTH_SHORT).show();
+                                                               String ConfirmPassword = et_confirm_password.getText().toString();
 
-                                                        firstname.setText("");
-                                                        lastname.setText("");
-                                                        input_email.setText("");
-                                                        postal_address.setText("");
-                                                        phone_number.setText("");
-                                                        password.setText("");
-                                                        et_confirm_password.setText("");
+                                                               firstname.setText("");
+                                                               lastname.setText("");
+                                                               input_email.setText("");
+                                                               postal_address.setText("");
+                                                               phone_number.setText("");
+                                                               password.setText("");
+                                                               et_confirm_password.setText("");
 
-                                                        profile_image.setImageResource(R.drawable.ic_launcher_background);
-//                                                        profile_image.setImageResource(R.drawable.user);
-                                                        //Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_LONG).show();
-                                                    }
-                                                }
-                                            });
-                                        }
-                                    }
-                                });
+                                                               profile_image.setImageResource(R.drawable.ic_launcher_background);
+                                                               //Toast.makeText(getApplicationContext(),"Uploaded",Toast.LENGTH_LONG).show();
+                                                           }
+                                                       }
+                                                   });
+                                               }
+                                           }
+                                       });
 
 
-
-                            }
-                        });
-                    }
-                })
-                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onProgress(UploadTask.TaskSnapshot taskSnapshot)
-                    {
-                        float percent=(100*taskSnapshot.getBytesTransferred())/taskSnapshot.getTotalByteCount();
-                        dialog.setMessage("Uploaded :"+(int)percent+" %");
-                    }
-                });
+                                   }
+                               });
+                           }
+                       })
+                       .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                           @Override
+                           public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                               float percent = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                               dialog.setMessage("Uploaded :" + (int) percent + " %");
+                           }
+                       });
+           }
 
 
     }
@@ -247,20 +289,6 @@ public class sign_up_page extends AppCompatActivity {
 
 
 
-
-//    //method to clear all user inputs
-//
-//    public void ClearControls(){
-//
-//        firstname.setText("");
-//        lastname.setText("");
-//        input_email.setText("");
-//        postal_address.setText("");
-//        phone_number.setText("");
-//        password.setText("");
-//        et_confirm_password.setText("");
-//
-//    }
 
 
 
