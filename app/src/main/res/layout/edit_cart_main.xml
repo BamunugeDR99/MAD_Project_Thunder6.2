@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myCart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".edit_cart">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="409dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/imageButton3"-->
+<!--                android:layout_width="90dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginStart="15dp"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="327dp"-->
+<!--                android:layout_marginRight="327dp"-->
+<!--                android:layout_marginBottom="7dp"-->
+<!--                android:background="?android:attr/selectableItemBackground"-->
+<!--                android:contentDescription="@+string/reorderDes"-->
+<!--                app:srcCompat="@drawable/ic_reorder"-->
+<!--                tools:ignore="VectorDrawableCompat,TouchTargetSizeCheck" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/imageButton4"-->
+<!--                android:layout_width="66dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginEnd="114dp"-->
+<!--                android:layout_marginRight="114dp"-->
+<!--                android:background="?android:attr/selectableItemBackground"-->
+<!--                android:contentDescription="@+string/notificationDes"-->
+<!--                app:srcCompat="@drawable/ic_notification"-->
+<!--                tools:ignore="VectorDrawableCompat" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/imageButton5"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginEnd="78dp"-->
+<!--                android:layout_marginRight="78dp"-->
+<!--                android:layout_marginBottom="12dp"-->
+<!--                android:background="?android:attr/selectableItemBackground"-->
+<!--                android:contentDescription="@+string/profileDes"-->
+<!--                app:srcCompat="@drawable/ic_profile"-->
+<!--                tools:ignore="VectorDrawableCompat,TouchTargetSizeCheck" />-->
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="13dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@+string/cartDes"
+                app:srcCompat="@drawable/ic_cart"
+                tools:ignore="VectorDrawableCompat,TouchTargetSizeCheck" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="411dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/my_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="107dp"
+            android:layout_marginLeft="107dp"
+            android:layout_marginEnd="108dp"
+            android:layout_marginRight="108dp"
+            android:text="Shopping Cart"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--        <ImageView-->
+<!--            android:id="@+id/restImage"-->
+<!--            android:layout_width="138dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginStart="139dp"-->
+<!--            android:layout_marginLeft="139dp"-->
+<!--            android:layout_marginEnd="134dp"-->
+<!--            android:layout_marginRight="134dp"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            app:srcCompat="@drawable/cake2"></ImageView>-->
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/CartRV"
+        android:layout_width="406dp"
+        android:layout_height="414dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <RelativeLayout
+        android:layout_width="410dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CartRV"
+        app:layout_constraintVertical_bias="0.927">
+
+        <Button
+            android:id="@+id/checkout"
+            android:layout_width="389dp"
+            android:layout_height="61dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="11dp"
+            android:text="Checkout"
+            android:textColor="#ffff"
+            app:backgroundTint="@color/purple_500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/total_a"
+            android:layout_width="170dp"
+            android:layout_height="37dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="224dp"
+            android:layout_marginRight="224dp"
+            android:layout_marginBottom="81dp"
+            android:text="Total Amount :"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="201dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginStart="198dp"
+            android:layout_marginLeft="198dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginBottom="88dp"
+            android:layout_toRightOf="@+id/total_a"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

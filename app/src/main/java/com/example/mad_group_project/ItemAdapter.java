@@ -113,6 +113,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
 
                         Intent intent = new Intent(holder.img.getContext(), customer_reviews.class);
 
+
                         intent.putExtra("Category", model.getCategory().toString());
 
 
@@ -124,7 +125,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                         intent.putExtra("Position", positions);
                         intent.putExtra("Image", model.getImage());
 
-                        holder.img.getContext().startActivity(intent);
+      holder.img.getContext().startActivity(intent);
 
                         Log.d("Button Message", "Ebuwa");
 
@@ -146,69 +147,6 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
 
                     }
                 });
-
-
-//                btnUpdate.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//
-//                        Map<String, Object> map = new HashMap<>();
-//
-//                        map.put("Name", name.getText().toString());
-//                        map.put("Course", course.getText().toString());
-//                        map.put("Email", email.getText().toString());
-//                        map.put("turl", turl.getText().toString());
-//
-//
-//                        FirebaseDatabase.getInstance().getReference().child("Teachers")
-//                                .child(getRef(position).getKey()).updateChildren(map)
-//                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                    @Override
-//                                    public void onSuccess(Void unused) {
-//
-//                                        Toast.makeText(holder.name.getContext(), "Data Updated Successfully", Toast.LENGTH_SHORT);
-//                                        dialogPlus.dismiss();
-//                                    }
-//                                })
-//
-//                                .addOnFailureListener(new OnFailureListener() {
-//                                    @Override
-//                                    public void onFailure( Exception e) {
-//                                        Toast.makeText(holder.name.getContext(), "Error While Updating Data", Toast.LENGTH_SHORT);
-//                                    }
-//                                });
-//
-//
-//                    }
-//                });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

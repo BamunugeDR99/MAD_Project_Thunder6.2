@@ -36,7 +36,7 @@ public class write_review extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_review);
 
-//        name=findViewById(R.id.item_name);
+//        value=findViewById(R.id.item_name);
 //        img=findViewById(R.id.item_img);
         review = findViewById(R.id.review);
         rating=findViewById(R.id.ratingBar);
@@ -44,6 +44,13 @@ public class write_review extends AppCompatActivity {
         rev_btn = findViewById(R.id.rev_btn);
 
         rev = new writerev();
+
+        Intent intent = getIntent();
+            String value= intent.getStringExtra("name");
+            Toast.makeText(getApplicationContext(),value,Toast.LENGTH_LONG).show();
+
+//        value=findViewById(R.id.item_name);
+
 
 //       rev_btn.setOnClickListener(new View.OnClickListener() {
 //           @Override
