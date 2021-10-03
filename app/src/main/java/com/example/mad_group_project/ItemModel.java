@@ -7,6 +7,7 @@ public class ItemModel {
     private String Image;
     private String Price;
     private String Ratings;
+    private String Category;
 
     public ItemModel() {
     }
@@ -19,6 +20,22 @@ public class ItemModel {
         Ratings = ratings;
     }
 
+    public ItemModel(String itemName, String description, String image, String price, String ratings, String category) {
+        ItemName = itemName;
+        Description = description;
+        Image = image;
+        Price = price;
+        Ratings = ratings;
+        Category = category;
+    }
+
+    public String getCategory() {
+        return Category;
+    }
+
+    public void setCategory(String category) {
+        Category = category;
+    }
 
     public String getItemName() {
         return ItemName;

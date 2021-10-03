@@ -44,6 +44,17 @@ public class HomeUI extends AppCompatActivity implements NavigationView.OnNaviga
 
 
             }
+
+
+        });
+
+
+        chocolatesCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), ChocolateItems.class));
+            }
         });
 
         drawer = findViewById(R.id.drawer_layout);

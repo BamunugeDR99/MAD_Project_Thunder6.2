@@ -21,6 +21,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -46,7 +47,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
     @Override
     protected void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position, @NonNull @NotNull ItemModel model) {
 
-
+        Log.d("model", model.getItemName().toString());
 
         holder.Itemname.setText(model.getItemName().toString());
         holder.Price.setText("Rs " + model.getPrice().toString());
@@ -111,13 +112,27 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                     public void onClick(View v) {
 
                         Intent intent = new Intent(holder.img.getContext(), customer_reviews.class);
-//                        intent.putExtra("item_name", FirebaseDatabase.getInstance().getReference().child("Items").);
-                        intent.putExtra("test", "success");
-                        intent.putExtra("item_img", String.valueOf(imgI));
-                        holder.img.getContext().startActivity(intent);
+
+
+                        intent.putExtra("Category", model.getCategory().toString());
+
+
+
+                      Log.d("PositionS",getRef(position).getKey().toString() );
+
+                      String positions = getRef(position).getKey().toString();
+
+                        intent.putExtra("Position", positions);
+                        intent.putExtra("Image", model.getImage());
+
+      holder.img.getContext().startActivity(intent);
 
                         Log.d("Button Message", "Ebuwa");
+
+
+
                     }
+
                 });
 
 
@@ -132,69 +147,6 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
 
                     }
                 });
-
-
-//                btnUpdate.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//
-//                        Map<String, Object> map = new HashMap<>();
-//
-//                        map.put("Name", name.getText().toString());
-//                        map.put("Course", course.getText().toString());
-//                        map.put("Email", email.getText().toString());
-//                        map.put("turl", turl.getText().toString());
-//
-//
-//                        FirebaseDatabase.getInstance().getReference().child("Teachers")
-//                                .child(getRef(position).getKey()).updateChildren(map)
-//                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                    @Override
-//                                    public void onSuccess(Void unused) {
-//
-//                                        Toast.makeText(holder.name.getContext(), "Data Updated Successfully", Toast.LENGTH_SHORT);
-//                                        dialogPlus.dismiss();
-//                                    }
-//                                })
-//
-//                                .addOnFailureListener(new OnFailureListener() {
-//                                    @Override
-//                                    public void onFailure( Exception e) {
-//                                        Toast.makeText(holder.name.getContext(), "Error While Updating Data", Toast.LENGTH_SHORT);
-//                                    }
-//                                });
-//
-//
-//                    }
-//                });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
