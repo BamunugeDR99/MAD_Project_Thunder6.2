@@ -1,12 +1,11 @@
 package com.example.mad_group_project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +20,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -34,6 +32,8 @@ import java.util.Map;
 public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.myViewHolder> {
 
 
+
+
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -42,6 +42,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
      */
     public ItemAdapter(@NonNull @NotNull FirebaseRecyclerOptions<ItemModel> options) {
         super(options);
+
     }
 
     @Override
@@ -124,6 +125,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
 
                         intent.putExtra("Position", positions);
                         intent.putExtra("Image", model.getImage());
+                        intent.putExtra("ItemName", model.getItemName());
 
       holder.img.getContext().startActivity(intent);
 
@@ -141,7 +143,40 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                     public void onClick(View v) {
 
 
+                        Toast.makeText(holder.itemCard.getContext(), "Fuck !", Toast.LENGTH_SHORT);
                         Log.d("Button Message", "Ebuwa2");
+
+                        Map<String, Object> map = new HashMap<>();
+
+
+                        map.put("ItemName",model.getItemName() );
+                        map.put("Price", model.getPrice());
+                        map.put("Ratings", model.getRatings());
+                        map.put("Reviews", "120");
+                        map.put("imgurl",model.getImage());
+
+                        Log.d("Map", map.toString());
+
+                        FirebaseDatabase.getInstance().getReference().child("WishList").child("C1").push()
+                                .setValue(map)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+
+                                        Toast.makeText(holder.itemCard.getContext(), "Item Added To Wish List Successfully !", Toast.LENGTH_SHORT);
+
+
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure( Exception e) {
+
+                                        Toast.makeText(holder.Itemname.getContext(),"Oops Error Occured !", Toast.LENGTH_SHORT);
+                                    }
+                                });
+
+
 
 
 
@@ -170,6 +205,8 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
 
 
     }
+
+
 
     @NonNull
     @NotNull

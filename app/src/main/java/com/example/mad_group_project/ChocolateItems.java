@@ -33,6 +33,7 @@ public class ChocolateItems extends AppCompatActivity {
 
 
 
+
         FirebaseRecyclerOptions<ItemModel> options =
                 new FirebaseRecyclerOptions.Builder<ItemModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Items").child("Chocolates"), ItemModel.class)

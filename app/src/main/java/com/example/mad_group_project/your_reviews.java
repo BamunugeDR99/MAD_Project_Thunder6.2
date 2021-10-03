@@ -44,7 +44,7 @@ public class your_reviews extends AppCompatActivity implements NavigationView.On
 
         FirebaseRecyclerOptions<yourreviews> options =
                 new FirebaseRecyclerOptions.Builder<yourreviews>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("YourReviews"), yourreviews.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("YourReviews").child("Cus1"), yourreviews.class)
                         .build();
 
 

@@ -3,6 +3,7 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#BFBFBF"
@@ -31,7 +32,8 @@
             android:layout_height="90dp"
             android:src="@mipmap/ic_launcher"
             app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp" />
+            app:civ_border_width="2dp"
+            tools:ignore="MissingPrefix" />
 
         <TextView
             android:id="@+id/rev_name"
@@ -45,7 +47,7 @@
             android:textStyle="bold"></TextView>
 
         <RatingBar
-            android:id="@+id/rating"
+            android:id="@+id/MyratingBar"
             style="@android:style/Widget.DeviceDefault.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,14 +57,20 @@
             android:layout_marginTop="2dp"
             android:layout_toEndOf="@+id/img"
             android:layout_toRightOf="@+id/img"
+
+
+            android:progressBackgroundTint="#FFEB3B"
+            android:progressTint="#FFEB3B"
+
             android:clickable="false"
+
             android:numStars="5" />
 
         <TextView
             android:id="@+id/rev_review"
             android:layout_width="250dp"
             android:layout_height="36dp"
-            android:layout_below="@+id/rating"
+            android:layout_below="@+id/MyratingBar"
             android:layout_marginLeft="13dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/img"

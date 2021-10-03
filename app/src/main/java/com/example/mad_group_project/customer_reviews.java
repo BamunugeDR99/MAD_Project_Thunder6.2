@@ -21,7 +21,9 @@ public class customer_reviews extends AppCompatActivity {
     RecyclerView rv2;
 
     CustomerAdaptor cusAdapter;
-
+    String category;
+    String position;
+    String image, itemName;
 //    String value="Review";
 
     @Override
@@ -34,10 +36,10 @@ public class customer_reviews extends AppCompatActivity {
 
         rv2.setLayoutManager(new LinearLayoutManager(this));
 
-        String category = getIntent().getStringExtra("Category");
-        String position = getIntent().getStringExtra("Position");
-        String image = getIntent().getStringExtra("Image");
-
+         category = getIntent().getStringExtra("Category");
+         position = getIntent().getStringExtra("Position");
+         image = getIntent().getStringExtra("Image");
+         itemName = getIntent().getStringExtra("ItemName");
 
         Log.d("Category",category);
         Log.d("Position",position);
@@ -84,9 +86,10 @@ public class customer_reviews extends AppCompatActivity {
 
     public void go(View view) {
         Intent intent = new Intent(customer_reviews.this, write_review.class);
-//        intent.putExtra("name","Review");
-////        intent.putExtra("item",);
-//        intent.putExtra("name","Review");
+        intent.putExtra("Category",category);
+        intent.putExtra("Image", image);
+        intent.putExtra("Position", position);
+        intent.putExtra("ItemName", itemName);
         startActivity(intent);
 
 
