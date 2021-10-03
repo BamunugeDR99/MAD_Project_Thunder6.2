@@ -21,6 +21,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -46,7 +47,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
     @Override
     protected void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position, @NonNull @NotNull ItemModel model) {
 
-
+        Log.d("model", model.getItemName().toString());
 
         holder.Itemname.setText(model.getItemName().toString());
         holder.Price.setText("Rs " + model.getPrice().toString());
@@ -111,16 +112,26 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                     public void onClick(View v) {
 
                         Intent intent = new Intent(holder.img.getContext(), customer_reviews.class);
+
+                        intent.putExtra("Category", model.getCategory().toString());
+
+
+
+                      Log.d("PositionS",getRef(position).getKey().toString() );
+
+                      String positions = getRef(position).getKey().toString();
+
+                        intent.putExtra("Position", positions);
+                        intent.putExtra("Image", model.getImage());
+
                         holder.img.getContext().startActivity(intent);
 
                         Log.d("Button Message", "Ebuwa");
 
 
-                        Intent intent = new Intent(holder.img.getContext(), customer_reviews.class);
-                        holder.img.getContext().startActivity(intent);
-
 
                     }
+
                 });
 
 
