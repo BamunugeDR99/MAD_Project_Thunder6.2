@@ -71,7 +71,7 @@ public class  WishListAdapter extends FirebaseRecyclerAdapter<WishListModel, Wis
 
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(DialogInterface dialog, int which) {    
 
                         FirebaseDatabase.getInstance().getReference().child("WishList").child("C1")
                                 .child(getRef(position).getKey()).removeValue();
