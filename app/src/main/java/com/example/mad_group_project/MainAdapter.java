@@ -45,16 +45,12 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         holder.price.setText("Rs." + model.getPrice().toString());
         holder.date.setText("Purchase on" + model.getDate());
 
-//// Calc Total Amount
+        //// Calc Total Amount
         TotalPrice = (int) (TotalPrice + model.getPrice());
         Intent intent = new Intent("Total Spending");
         intent.putExtra("TotalPrice",TotalPrice);
 
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
-
-
-
-
 
 
 

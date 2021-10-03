@@ -110,6 +110,8 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                     @Override
                     public void onClick(View v) {
 
+                        Intent intent = new Intent(holder.img.getContext(), customer_reviews.class);
+                        holder.img.getContext().startActivity(intent);
 
                         Log.d("Button Message", "Ebuwa");
 
