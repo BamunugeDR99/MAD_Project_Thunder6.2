@@ -1,25 +1,25 @@
 package com.example.mad_group_project;
 
 public class writerev {
-    private String review;
-    private Float rating;
+    private String cusdescription;
+    private String rating;
 
     public writerev() {
     }
 
-    public String getReview() {
-        return review;
+    public String getCusdescription() {
+        return cusdescription;
     }
 
-    public void setReview(String review) {
-        review = review;
+    public void setCusdescription(String cusdescription) {
+        this.cusdescription = cusdescription;
     }
 
-    public Float getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(Float rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 }

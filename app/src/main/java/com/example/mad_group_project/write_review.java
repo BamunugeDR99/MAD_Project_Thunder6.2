@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,15 +28,16 @@ public class write_review extends AppCompatActivity {
 
     writerev rev;
 
-    DatabaseReference db;
+    DatabaseReference db1;
+    DatabaseReference db2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_review);
 
-        name=findViewById(R.id.item_name);
-        img=findViewById(R.id.item_img);
+//        name=findViewById(R.id.item_name);
+//        img=findViewById(R.id.item_img);
         review = findViewById(R.id.review);
         rating=findViewById(R.id.ratingBar);
 
@@ -54,7 +56,8 @@ public class write_review extends AppCompatActivity {
     }
     public void Save(View view){
 
-        db = FirebaseDatabase.getInstance().getReference().child("WriteReview");
+        db1 = FirebaseDatabase.getInstance().getReference().child("Items").child("Cakes").child("C1").child("Reviews");
+        db2 = FirebaseDatabase.getInstance().getReference().child("YourReviews").child("Cus1");
 
 //        rating= Float.parseFloat(String.valueOf(rating.getRating()));
 //        rev=review.getText().toString().trim();
@@ -67,11 +70,17 @@ public class write_review extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"please rate", Toast.LENGTH_LONG).show();
         }
         else {
-            rev.setReview(review.getText().toString().trim());
+            rev.setCusdescription(review.getText().toString().trim());
+            rev.setRating(String.valueOf(rating.getRating()));
 //            rev.setRating(Float.parseFloat(String.valueOf(rating.getRating())));
-//            String s = String.valueOf(rating.getRating());
 
-            db.push().setValue(rev);
+            Toast.makeText(getApplicationContext(),rev.getCusdescription().toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),String.valueOf(rating.getRating()), Toast.LENGTH_LONG).show();
+
+
+
+            db1.push().setValue(rev);
+            db2.push().setValue(rev);
 //            db.child("WR2").setValue(rev);
             Toast.makeText(getApplicationContext(),"successful insertion", Toast.LENGTH_LONG).show();
         }
