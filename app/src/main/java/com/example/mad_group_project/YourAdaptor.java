@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
 
         holder.name.setText(model.getName());
         holder.description.setText(model.getDescription());
+        holder.rtb.setRating(Float.parseFloat(model.getRating()));
 
         Glide.with(holder.img.getContext())
                 .load(model.getImageurl())
@@ -78,7 +80,7 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
                 public void onClick(View v) {
                     Map<String, Object> map = new HashMap<>();
                     map.put("description",description.getText().toString());
-                    FirebaseDatabase.getInstance().getReference().child("YourReviews")
+                    FirebaseDatabase.getInstance().getReference().child("YourReviews").child("Cus1")
                         .child(getRef(position).getKey()).updateChildren(map)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -104,7 +106,7 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        FirebaseDatabase.getInstance().getReference().child("YourReviews")
+                        FirebaseDatabase.getInstance().getReference().child("YourReviews").child("Cus1")
                                 .child(getRef(position).getKey()).removeValue();
                     }
                 });
@@ -135,6 +137,7 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
         ImageView img;
         TextView name,description;
         Button btn_edit, btn_delete;
+        RatingBar rtb;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -146,6 +149,7 @@ public class YourAdaptor extends FirebaseRecyclerAdapter<yourreviews, YourAdapto
             img = (ImageView)itemView.findViewById(R.id.img);
             name = (TextView)itemView.findViewById(R.id.rev_name);
             description = (TextView)itemView.findViewById(R.id.rev_review);
+            rtb = (RatingBar)itemView.findViewById(R.id.MyratingBar) ;
 
             btn_edit = (Button)itemView.findViewById(R.id.btn_edit);
             btn_delete = (Button)itemView.findViewById(R.id.btn_delete);
