@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -19,11 +20,24 @@ public class View_card extends AppCompatActivity {
     FloatingActionButton AC_FL_BTN;
     RecyclerView RV_3;
 
+    ImageButton image_btn;
+
     ViewCardAdapter viewCardAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_card);
+
+        image_btn=(ImageButton) findViewById(R.id.imgbtn);
+
+        image_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+//                Intent intent = new Intent(write_review.this, customer_reviews.class);
+//                startActivity(intent);
+            }
+        });
 
         //Assigning recycler view
         RV_3= (RecyclerView)findViewById(R.id.RV_3);

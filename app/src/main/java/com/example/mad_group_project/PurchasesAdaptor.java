@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 
 //import de.hdodenhof.circleimageview.CircleImageView;
 //Used to main_item to recycler view
-public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAdaptor.myViewHolder> {
+public class PurchasesAdaptor extends FirebaseRecyclerAdapter<FoodCart, PurchasesAdaptor.myViewHolder> {
 
     int TotalPrice =0;
     Context context;
@@ -35,7 +35,7 @@ public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAda
      *
      * @param options
      */
-    public ConfirmAdaptor(@NonNull @NotNull FirebaseRecyclerOptions<FoodCart> options) {
+    public PurchasesAdaptor(@NonNull @NotNull FirebaseRecyclerOptions<FoodCart> options) {
         super(options);
     }
 
@@ -43,11 +43,11 @@ public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAda
     protected void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position, @NonNull @NotNull FoodCart model) {
 
         holder.name.setText(model.getName());
-        holder.price.setText("Rs." +model.getPrice().toString());
-        holder.quantity.setText(model.getQuantity().toString());
+        holder.price.setText("Total Amount    :     Rs." +model.getFinalPrice().toString());
+        holder.quantity.setText("Quantity               :      "+model.getQuantity().toString());
 
 
-        TotalPrice = TotalPrice + (Integer.parseInt(model.getPrice())*(Integer.parseInt(model.getQuantity())));
+        TotalPrice = TotalPrice + Integer.parseInt(model.getFinalPrice());
         Intent intent = new Intent("Total Amount");
         intent.putExtra("TotalPrice",TotalPrice);
 
@@ -67,7 +67,7 @@ public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAda
     public myViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
 
         //Bind myViewHolder & return it
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.confirm_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_item, parent, false);
         return new myViewHolder(view);
     }
 
@@ -81,9 +81,9 @@ public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAda
             super(itemView);
 
             img = (ImageView)itemView.findViewById(R.id.img1);
-            name = (TextView)itemView.findViewById(R.id.name);
-            price = (TextView)itemView.findViewById(R.id.price);
-            quantity = (TextView)itemView.findViewById(R.id.quantity);
+            name = (TextView)itemView.findViewById(R.id.nametext);
+            price = (TextView)itemView.findViewById(R.id.pricetext);
+            quantity = (TextView)itemView.findViewById(R.id.quantitytext);
 
 //            confirm = (Button) itemView.findViewById(R.id.btn_confirm);
         }

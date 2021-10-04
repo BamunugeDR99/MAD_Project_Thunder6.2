@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -31,6 +32,8 @@ public class edit_cart extends AppCompatActivity implements NavigationView.OnNav
     RecyclerView recyclerView;
     FoodCartAdapter foodCartAdapter;
     TextView TAmount;
+
+    Button Check;
 
     DrawerLayout drawer;
     NavigationView navigationView;
@@ -46,7 +49,7 @@ public class edit_cart extends AppCompatActivity implements NavigationView.OnNav
 
         TAmount=findViewById(R.id.total);
 
-
+        Check=findViewById(R.id.checkout);
 
         drawer = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar);
@@ -82,7 +85,16 @@ public class edit_cart extends AppCompatActivity implements NavigationView.OnNav
 
 
         LocalBroadcastManager.getInstance(this)
-                .registerReceiver(mMessageReceiver, new IntentFilter("Total Spending"));
+                .registerReceiver(mMessageReceiver, new IntentFilter("Total Amount"));
+
+
+        Check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(edit_cart.this, View_card.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -106,8 +118,8 @@ public class edit_cart extends AppCompatActivity implements NavigationView.OnNav
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            int TotalPrice = intent.getIntExtra("TotalPrice",0);
-            TAmount.setText("LKR. "+TotalPrice+".00");
+            int Total = intent.getIntExtra("TotalPrice",0);
+            TAmount.setText("LKR. "+Total+".00");
         }
     };
 

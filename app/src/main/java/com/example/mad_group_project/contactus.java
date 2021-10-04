@@ -89,6 +89,7 @@ public class contactus extends AppCompatActivity implements NavigationView.OnNav
 
         //add validation for email
         awesomeValidation.addValidation(this,R.id.et_email, Patterns.EMAIL_ADDRESS,R.string.invalid_email);
+
     }
     public void Save(View view){
         db = FirebaseDatabase.getInstance().getReference().child("Contact");
