@@ -118,6 +118,8 @@ public class  WishListAdapter extends FirebaseRecyclerAdapter<WishListModel, Wis
                 map.put("price", model.getPrice());
                 map.put("description", model.getDescription());
                 map.put("foodImage",model.getImgurl());
+                map.put("quantity", "1");
+                map.put("finalPrice", model.getPrice());
 
                 Log.d("Map", map.toString());
 

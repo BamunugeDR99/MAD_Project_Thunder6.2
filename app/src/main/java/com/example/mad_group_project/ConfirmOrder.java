@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -33,10 +34,13 @@ public class ConfirmOrder extends AppCompatActivity {
 
 //        TAmount = findViewById(R.id.total_amount);
 
-        FirebaseRecyclerOptions<ConfirmOrderModel> options =
-                new FirebaseRecyclerOptions.Builder<ConfirmOrderModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("OrderItems").child("C1"), ConfirmOrderModel.class)
+        FirebaseRecyclerOptions<FoodCart> options =
+                new FirebaseRecyclerOptions.Builder<FoodCart>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Cart").child("C1"), FoodCart.class)
                         .build();
+
+
+        Log.d("OrderItems", options.getSnapshots().toString());
 
 //        System.out.println("--------------------------------------------------------------");
 
@@ -45,4 +49,20 @@ public class ConfirmOrder extends AppCompatActivity {
 
         RV.setAdapter(confirmAdaptor);
     }
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        confirmAdaptor.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        confirmAdaptor.stopListening();
+    }
+
 }

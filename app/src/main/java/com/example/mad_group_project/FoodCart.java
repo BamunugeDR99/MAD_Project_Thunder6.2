@@ -2,17 +2,27 @@ package com.example.mad_group_project;
 
 public class FoodCart {
 
-    String name, description, foodImage, price;
+    String name, description, foodImage, price, quantity ,finalPrice;
 
     FoodCart() {
 
     }
 
-    public FoodCart(String name, String description, String foodImage, String price) {
+    public FoodCart(String name, String description, String foodImage, String price, String quantity, String finalPrice) {
         this.name = name;
         this.description = description;
         this.foodImage = foodImage;
         this.price = price;
+        this.quantity = quantity;
+        this.finalPrice = finalPrice;
+    }
+
+    public String getFinalPrice() {
+        return finalPrice;
+    }
+
+    public void setFinalPrice(String finalPrice) {
+        this.finalPrice = finalPrice;
     }
 
     public String getName() {
@@ -45,5 +55,13 @@ public class FoodCart {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 }
