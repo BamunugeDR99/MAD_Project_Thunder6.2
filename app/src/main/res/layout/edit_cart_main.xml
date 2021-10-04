@@ -26,21 +26,20 @@
             android:elevation="4dp"/>
 
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/myCart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#FBFBFB"
             tools:context=".edit_cart">
-
 
 
             <RelativeLayout
                 android:layout_width="411dp"
                 android:layout_height="208dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="14dp"
+                android:background="#F6F6F6"
+                android:gravity=""
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -59,7 +58,7 @@
                     android:layout_marginRight="108dp"
                     android:text="Shopping Cart"
                     android:textColor="@color/black"
-                    android:textSize="30sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.057"
@@ -69,21 +68,21 @@
 
             </RelativeLayout>
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/CartRV"
-                android:layout_width="406dp"
-                android:layout_height="414dp"
+                android:layout_width="403dp"
+                android:layout_height="407dp"
                 android:layout_marginStart="1dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="1dp"
+                android:background="#F1F1F1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.125"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.422" />
+                app:layout_constraintVertical_bias="0.281" />
 
             <RelativeLayout
                 android:layout_width="410dp"
@@ -110,6 +109,7 @@
                     android:layout_marginBottom="11dp"
                     android:text="Checkout"
                     android:textColor="#ffff"
+                    android:textSize="14dp"
                     app:backgroundTint="@color/purple_500"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
@@ -132,7 +132,7 @@
                     android:layout_marginBottom="81dp"
                     android:text="Total Amount :"
                     android:textColor="@color/black"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -155,11 +155,9 @@
                     android:layout_marginBottom="88dp"
                     android:layout_toRightOf="@+id/total_a"
                     android:textColor="@color/black"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent" />
-
-
 
 
             </RelativeLayout>
