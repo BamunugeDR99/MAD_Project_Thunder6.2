@@ -96,10 +96,8 @@ public class user_profile extends AppCompatActivity implements NavigationView.On
         username = findViewById(R.id.p_username);
         profile_image = findViewById(R.id.profile_image);
 
-
 //        dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("aAMe4dwdPdZsqgNTdWztSBaTD512");// id **
 //        storageReference = FirebaseStorage.getInstance().getReference();
-
 
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("aAMe4dwdPdZsqgNTdWztSBaTD512");
 

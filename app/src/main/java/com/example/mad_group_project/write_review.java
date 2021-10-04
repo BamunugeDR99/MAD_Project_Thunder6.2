@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ public class write_review extends AppCompatActivity {
     ImageView img;
     Button rev_btn;
     RatingBar rating;
+    ImageButton image_btn;
 
     writerev rev;
 
@@ -45,6 +47,17 @@ public class write_review extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_review);
+
+        image_btn=(ImageButton) findViewById(R.id.imgbtn);
+
+        image_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+//                Intent intent = new Intent(write_review.this, customer_reviews.class);
+//                startActivity(intent);
+            }
+        });
 
 
         review = findViewById(R.id.review);
@@ -110,6 +123,7 @@ public class write_review extends AppCompatActivity {
                 public void onSuccess(Void unused) {
 
                     Toast.makeText(getApplicationContext(),"successful insertion", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(write_review.this,customer_reviews.class);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
