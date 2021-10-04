@@ -41,6 +41,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="112dp"
         android:layout_marginRight="112dp"
+        android:textColor="@color/white"
         android:text="Write A Review"
         android:textSize="24sp"
         android:textStyle="bold"
