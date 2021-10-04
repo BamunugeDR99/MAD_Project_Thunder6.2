@@ -16,7 +16,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+
 import android.view.MenuItem;
+
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -34,10 +36,14 @@ public class myPurchases extends AppCompatActivity implements NavigationView.OnN
     Toolbar toolbar;
 
     MainAdapter mainAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_purchases);
+
+
 
         //Assigning recycler view
         RV_1= (RecyclerView)findViewById(R.id.RV_1);
