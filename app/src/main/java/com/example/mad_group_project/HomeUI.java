@@ -57,6 +57,39 @@ public class HomeUI extends AppCompatActivity implements NavigationView.OnNaviga
             }
         });
 
+
+        giftCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), GiftItems.class));
+            }
+        });
+
+
+        flowersCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), FlowerItems.class));
+            }
+        });
+
+
+        combosCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), ComboItems.class));
+            }
+        });
+
+
+
+
+
+
+
         drawer = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar);
         navigationView = findViewById(R.id.nav_view);

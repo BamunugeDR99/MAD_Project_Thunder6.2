@@ -104,6 +104,18 @@
         <activity
             android:name=".ChocolateItems"
             android:exported="true"></activity>
+
+
+        <activity
+            android:name=".ComboItems"
+            android:exported="true"></activity>
+        <activity
+            android:name=".FlowerItems"
+            android:exported="true"></activity>
+        <activity
+            android:name=".GiftItems"
+            android:exported="true"></activity>
+
     </application>
 
 </manifest>
