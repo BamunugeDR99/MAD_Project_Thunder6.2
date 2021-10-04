@@ -187,6 +187,7 @@
                 android:layout_marginLeft="60dp"
                 android:gravity="center"
                 android:text="Cancel"
+                android:onClick="cancel"
                 android:textSize="14dp" />
 
             <Button
@@ -197,6 +198,7 @@
                 android:layout_marginLeft="50dp"
                 android:gravity="center"
                 android:text="Confirm"
+                android:onClick="Confirm"
                 android:textSize="14dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

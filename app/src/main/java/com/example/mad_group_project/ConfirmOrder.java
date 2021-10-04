@@ -9,14 +9,20 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
@@ -27,7 +33,9 @@ public class ConfirmOrder extends AppCompatActivity {
     RecyclerView RV;
     TextView TAmount,Type,Number;
 
+    Button confirm,cancel;
 
+    Context context;
 
     String type, number, positionS,name;
 //    int overAllTotalPrice;
@@ -104,4 +112,27 @@ public class ConfirmOrder extends AppCompatActivity {
         }
     };
 
+    public void Confirm(View view) {
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle(Html.fromHtml("<font color='#4CAF50'>Your Order has been Successfully Placed!</font>"));
+        alertDialogBuilder.setMessage(Html.fromHtml("<font color='#000000'>Thanks for Shopping with Us!</font></font>"));
+        alertDialogBuilder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(ConfirmOrder.this,HomeUI.class);
+                       startActivity(intent);
+            }
+        });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
+
+    public void cancel(View view) {
+        Toast.makeText(getApplicationContext(),"Cancelled",Toast.LENGTH_SHORT).show();
+        Intent intent2 = new Intent(ConfirmOrder.this,edit_cart.class);
+        startActivity(intent2);
+
+    }
 }
