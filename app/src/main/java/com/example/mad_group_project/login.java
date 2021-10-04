@@ -39,7 +39,6 @@ public class login extends AppCompatActivity {
         signup=findViewById(R.id.sign_txt);
 
         mAuth= FirebaseAuth.getInstance();
-
         mDialog=new ProgressDialog(this);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -51,12 +50,10 @@ public class login extends AppCompatActivity {
                 if(TextUtils.isEmpty(rEmail)){
                     email.setError("Required Field...");
                     return;
-                }
-                if (TextUtils.isEmpty(rPass)){
+                }if (TextUtils.isEmpty(rPass)){
                     pass.setError("Required Field..");
                     return;
                 }
-
                 mDialog.setMessage("Processing..");
                 mDialog.show();
 
@@ -64,14 +61,12 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            startActivity(new Intent(getApplicationContext(),user_profile.class));
+                            startActivity(new Intent(getApplicationContext(),HomeUI.class));
                             Toast.makeText(getApplicationContext(),"Successful", Toast.LENGTH_SHORT).show();
-
                             mDialog.dismiss();
                         }
                         else{
                             Toast.makeText(getApplicationContext(),"Failed..",Toast.LENGTH_LONG).show();
-
                             mDialog.dismiss();
                         }
                     }
@@ -79,11 +74,16 @@ public class login extends AppCompatActivity {
             }
         });
 
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),registration.class));
-            }
-        });
+//        signup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getApplicationContext(),sign_up_page.class));
+//            }
+//        });
+    }
+
+    public void SignUp(View view) {
+        Intent intent = new Intent(login.this,sign_up_page.class);
+        startActivity(intent);
     }
 }

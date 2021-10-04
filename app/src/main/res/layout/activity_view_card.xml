@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".View_card">
 
+
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV_3"
         android:layout_width="match_parent"

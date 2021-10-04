@@ -2,11 +2,16 @@ package com.example.mad_group_project;
 
 
 
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
+
+import android.content.Context;
+import android.content.Intent;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +32,13 @@ import org.jetbrains.annotations.NotNull;
 //Used to main_item to recycler view
 public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.myViewHolder> {
 
+
     private Float TotalSpending =0.0f;
+
+    int TotalPrice =0;
+    Context context;
+
+
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -46,6 +57,14 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         holder.price.setText("Rs." + model.getPrice().toString());
         holder.price.setText("Rs. " + model.getPrice());
         holder.date.setText("Purchase on" + model.getDate());
+
+        //// Calc Total Amount
+        TotalPrice = (int) (TotalPrice + model.getPrice());
+        Intent intent = new Intent("Total Spending");
+        intent.putExtra("TotalPrice",TotalPrice);
+
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
 
 
         TotalSpending = TotalSpending + Float.parseFloat(model.getPrice());
@@ -84,6 +103,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         //CircleImageView img;
         ImageView img;
         TextView name,price,date,TotalSpending;
+
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">My Purchases</string>
+
+
+
+    <string name="app_name">Sunset Gifts</string>
+
+
+
     <string name="title_activity_contactus">contactus</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -9,16 +15,52 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+    </style>
+
     <string name="BTN_Select">Select</string>
     <string name="BTN_REMOVE">REMOVE</string>
     <string name="BT1_1">Submit</string>
     <string name="Text_111" />
     <string name="ItemPricw">Item Price</string>
     <string name="Date">Purchased Date</string>
+
     <string name="TotalText">Tortal Spending</string>
     <string name="TotalAmountText">Amount</string>
 
     <string name="invalid_name">This field cannot be empty!</string>
     <string name="invalid_number">Please enter a valid Card Number!</string>
     <string name="invalid_date">This field cannot be empty!</string>
+
+    <string name="PriceView">Price</string>
+    <string name="ProductName">ProductName</string>
+    <string name="RateNo">NoOfRatings</string>
+    <string name="Quantity">Quantity</string>
+    <string name="Description">Description</string>
+    <string name="Reviews">Reviews</string>
+    <string name="CartBtn">Add to Cart</string>
+    <string name="addButton">+</string>
+    <string name="removeBtn">-</string>
+    <string name="quantity">1</string>
+    <string name="appName">Sunset Gifts</string>
+    <string name="Trending">Trending Now</string>
+    <string name="heading2">Bring Joy To Your Loved ones</string>
+    <string name="category1">Cakes</string>
+    <string name="category2">Combos</string>
+    <string name="category4">Flowers</string>
+    <string name="category3">Chocolates</string>
+    <string name="category5">Gifts</string>
+    <string name="invalid_name" />
+    <string name="invalidL_name" />
+    <string name="invalid_email" />
+    <string name="invali_mobile" />
+    <string name="invalid_address" />
+    <string name="invalid_Cpassword" />
+
 </resources>

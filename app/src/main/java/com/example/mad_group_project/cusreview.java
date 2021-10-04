@@ -5,6 +5,7 @@ public class cusreview {
     private String cusname;
     private String cusdescription;
     private String cusurl;
+    private String rating;
 
     public cusreview() {
     }
@@ -32,4 +33,13 @@ public class cusreview {
     public void setCusurl(String cusurl) {
         this.cusurl = cusurl;
     }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+
+}
 }

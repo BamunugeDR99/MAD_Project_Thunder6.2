@@ -35,71 +35,38 @@
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center_horizontal" />
 
-    <RadioButton
-        android:id="@+id/AC_Radio_BTN1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="112dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="211dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/TIV1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="MissingConstraints">
 
-    <RadioButton
-        android:id="@+id/AC_Radio_BTN2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="112dp"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.658"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
+        <RadioButton
+            android:id="@+id/AC_Radio_BTN1"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="139dp"
-        android:layout_height="64dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="104dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/download1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
+            android:text="Visa">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="102dp"
-        android:layout_height="58dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="112dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.906"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dd1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" />
+
+        </RadioButton>
+
+
+        <RadioButton
+            android:id="@+id/AC_Radio_BTN2"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="Master Card" />
+
+    </RadioGroup>
+
+
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -119,8 +86,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/AC_Card_Owner"
-            android:layout_width="373dp"
-            android:layout_height="60dp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -140,8 +107,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/AC_Card_Number"
-            android:layout_width="373dp"
-            android:layout_height="60dp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -162,7 +129,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/AC_Card_Date"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -171,7 +138,7 @@
         android:layout_height="49dp"
         android:layout_marginBottom="80dp"
         android:backgroundTint="#9969C8"
-        android:onClick="Submit"
+
         android:text="@string/BT1_1"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -180,6 +147,28 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="OnClick" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="87dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toEndOf="@+id/radio"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/download1" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="84dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toTopOf="@+id/TIV1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toEndOf="@+id/radio"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.277"
+        app:srcCompat="@drawable/dd1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

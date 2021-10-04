@@ -4,6 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    app:layout_constraintBottom_toTopOf="@+id/cardView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.25"
     tools:context=".customer_reviews">
 
     <TextView
@@ -21,19 +29,66 @@
 
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="60dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/layout1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rv2"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/txt_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_baseline_person_24"
+            android:text="Write Your Own Review"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/btn_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:onClick="go"
+            android:text="Go"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

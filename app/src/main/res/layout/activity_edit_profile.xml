@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".edit_profile">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#9969C8"
+        android:id="@+id/toolbar"
+
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="4dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/imgbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/purple_500"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+            tools:ignore="VectorDrawableCompat" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/ic_launcher_background"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_profile" />
+
+            <TextView
+                android:id="@+id/edit_profile"
+                android:layout_width="141dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="66dp"
+                android:text="User Profile"
+                android:textColor="#171616"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.159"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_edit_fn"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="319dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="5dp"
+                android:hint="First_Name"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/purple_500"
+                app:endIconTint="@color/black"
+                app:hintTextColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image">
+
+
+                <EditText
+                    android:id="@+id/edit_fn"
+                    android:layout_width="319dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:inputType="textPersonName"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_edit_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="319dp"
+                android:layout_height="58dp"
+                android:hint="Email"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/purple_500"
+                app:endIconTint="@color/black"
+                app:hintTextColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_edit_ln">
+
+                <EditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="319dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_edit_phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="319dp"
+                android:layout_height="58dp"
+                android:hint="Phone Number"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/purple_500"
+                app:endIconTint="@color/black"
+                app:hintTextColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_edit_email">
+
+                <EditText
+                    android:id="@+id/edit_phone"
+                    android:layout_width="319dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:inputType="numberDecimal"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/changeP"
+                android:layout_width="205dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:layout_marginTop="10dp"
+                android:text="Change Password"
+                android:textColor="@color/purple_500"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_edit_add" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_current_P"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="319dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="5dp"
+                android:hint="Current Password"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/purple_500"
+                app:endIconTint="@color/black"
+                app:hintTextColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/changeP">
+
+                <EditText
+                    android:id="@+id/current_password"
+                    android:layout_width="319dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:inputType="textPassword"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_new_P"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="319dp"
+                android:layout_height="58dp"
+                android:hint="New Password"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/purple_500"
+                app:endIconTint="@color/black"
+                app:hintTextColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_current_P">
+
+                <EditText
+                    android:id="@+id/new_password"
+                    android:layout_width="319dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:inputType="textPassword"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_confirm_P"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="319dp"
+                android:layout_height="58dp"
+                android:hint="Confirm Password"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/purple_500"
+                app:endIconTint="@color/black"
+                app:hintTextColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_new_P">
+
+                <EditText
+                    android:id="@+id/confirm_password"
+                    android:layout_width="319dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/update_btn"
+                android:layout_width="144dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:layout_marginTop="10dp"
+                android:text="Update"
+                android:textColor="#ffff"
+                app:backgroundTint="@color/purple_500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_confirm_P" />
+
+            <Button
+                android:id="@+id/deletePbtn"
+                android:layout_width="144dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="44dp"
+                android:onClick="DeleteUserprofile"
+                android:text="Delete"
+                android:textColor="#ffff"
+                app:backgroundTint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_confirm_P" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_edit_ln"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="319dp"
+                android:layout_height="58dp"
+                android:hint="Last Name"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/purple_500"
+                app:endIconTint="@color/black"
+                app:hintTextColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_edit_fn">
+
+
+                <EditText
+                    android:id="@+id/edit_ln"
+                    android:layout_width="319dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:inputType="textPersonName"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_edit_add"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="319dp"
+                android:layout_height="58dp"
+                android:hint="Address"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/purple_500"
+                app:endIconTint="@color/black"
+                app:hintTextColor="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_edit_phone">
+
+                <EditText
+                    android:id="@+id/edit_add"
+                    android:layout_width="319dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/Upload_image"
+                android:layout_width="37dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="152dp"
+                android:layout_marginEnd="144dp"
+                android:layout_marginRight="144dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_camera_alt_24"
+                tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
