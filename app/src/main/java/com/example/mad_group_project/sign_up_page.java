@@ -226,6 +226,9 @@ public class sign_up_page extends AppCompatActivity {
                                                                Toast.makeText(sign_up_page.this, "User added", Toast.LENGTH_SHORT).show();
                                                                String ConfirmPassword = et_confirm_password.getText().toString();
 
+                                                               Intent intent = new Intent(sign_up_page.this,HomeUI.class);
+                                                               startActivity(intent);
+
                                                                firstname.setText("");
                                                                lastname.setText("");
                                                                input_email.setText("");
@@ -264,64 +267,6 @@ public class sign_up_page extends AppCompatActivity {
         Intent intent = new Intent(sign_up_page.this,login.class);
         startActivity(intent);
     }
-
-
-//    protected void onResume(){
-//
-//        super.onResume();
-//        button_signup.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                if(terms.isChecked()){
-//
-//                    String FirstName = firstname.getText().toString().trim();
-//                    String LastName = lastname.getText().toString().trim();
-//                    String Email = input_email.getText().toString().trim();
-//                    String Address = postal_address.getText().toString().trim();
-//
-//                    /////// input only string value don't input integer values///////////////
-//                    String PhoneNumber = phone_number.getText().toString().trim();
-//
-//                    /////////////////////////////////
-//                    String Password = password.getText().toString().trim();
-//
-//                    //phone number
-//                    String ConfirmPassword = et_confirm_password.getText().toString();
-//                    auth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<AuthResult> task) {
-//                            if(task.isSuccessful()){
-//                                Toast.makeText(sign_up_page.this, "User Created", Toast.LENGTH_SHORT).show();
-//                                firebaseUser = auth.getCurrentUser();
-//
-//
-//                                CusObj = new Customer(FirstName,LastName,Email,Address,PhoneNumber,Password);
-//
-//                                dbRef.child(firebaseUser.getUid()).setValue(CusObj).addOnCompleteListener(new OnCompleteListener<Void>() {
-//
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<Void> task) {
-//                                        if(task.isSuccessful()){
-//                                            Toast.makeText(sign_up_page.this, "Customer Added Successfully", Toast.LENGTH_SHORT).show();
-//
-//                                        }else{
-//                                            Toast.makeText(sign_up_page.this, "Customer Added Failed", Toast.LENGTH_SHORT).show();
-//                                            ClearControls(); }
-//                                    }
-//                                });
-//                            }else {
-//                                Toast.makeText(sign_up_page.this, "User Create failed", Toast.LENGTH_SHORT).show(); }
-//                        }
-//                    });
-//
-//                }else{
-//
-//                    Toast.makeText(sign_up_page.this, "You should agree with our terms and conditions", Toast.LENGTH_SHORT).show();
-//                }
-//
-//            }
-//        });
 
 
 

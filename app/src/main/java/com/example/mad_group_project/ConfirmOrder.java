@@ -3,9 +3,14 @@ package com.example.mad_group_project;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -17,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ConfirmOrder extends AppCompatActivity {
 
     RecyclerView RV;
-//    TextView TAmount;
+    TextView TAmount;
 //    int overAllTotalPrice;
 
     ConfirmAdaptor confirmAdaptor;
@@ -32,7 +37,7 @@ public class ConfirmOrder extends AppCompatActivity {
 
         RV.setLayoutManager(new LinearLayoutManager(this));
 
-//        TAmount = findViewById(R.id.total_amount);
+        TAmount = findViewById(R.id.total_amount);
 
         FirebaseRecyclerOptions<FoodCart> options =
                 new FirebaseRecyclerOptions.Builder<FoodCart>()
@@ -48,7 +53,11 @@ public class ConfirmOrder extends AppCompatActivity {
 
 
         RV.setAdapter(confirmAdaptor);
+
+        LocalBroadcastManager.getInstance(this)
+                .registerReceiver(mMessageReceiver, new IntentFilter("Total Amount"));
     }
+
 
 
 
@@ -64,5 +73,14 @@ public class ConfirmOrder extends AppCompatActivity {
         super.onStop();
         confirmAdaptor.stopListening();
     }
+
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            int Total = intent.getIntExtra("TotalPrice",0);
+            TAmount.setText("LKR. "+Total+".00");
+        }
+    };
 
 }

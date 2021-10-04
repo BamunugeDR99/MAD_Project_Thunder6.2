@@ -26,8 +26,8 @@ import org.jetbrains.annotations.NotNull;
 //Used to main_item to recycler view
 public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAdaptor.myViewHolder> {
 
-//    int TotalPrice =0;
-//    Context context;
+    int TotalPrice =0;
+    Context context;
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -46,11 +46,12 @@ public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAda
         holder.price.setText("Rs." +model.getPrice().toString());
         holder.quantity.setText(model.getQuantity().toString());
 
-//        TotalPrice = (int) (TotalPrice + model.getPrice());
-//        Intent intent = new Intent("Total Spending");
-//        intent.putExtra("TotalPrice",TotalPrice);
-//
-//        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
+        TotalPrice = TotalPrice + Integer.parseInt(model.getPrice());
+        Intent intent = new Intent("Total Amount");
+        intent.putExtra("TotalPrice",TotalPrice);
+
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 
 
         Glide.with(holder.img.getContext())

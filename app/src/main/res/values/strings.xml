@@ -62,5 +62,7 @@
     <string name="invali_mobile" />
     <string name="invalid_address" />
     <string name="invalid_Cpassword" />
+    <string name="invalid_contact_name" />
+    <string name="invalid_mesaage" />
 
 </resources>

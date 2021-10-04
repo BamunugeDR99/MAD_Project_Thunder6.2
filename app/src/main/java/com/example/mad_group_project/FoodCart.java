@@ -1,5 +1,7 @@
 package com.example.mad_group_project;
 
+import androidx.lifecycle.LiveData;
+
 public class FoodCart {
 
     String name, description, foodImage, price, quantity ,finalPrice;
@@ -64,4 +66,6 @@ public class FoodCart {
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
+
+
 }
