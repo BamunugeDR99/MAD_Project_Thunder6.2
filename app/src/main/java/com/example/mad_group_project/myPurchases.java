@@ -29,13 +29,13 @@ public class myPurchases extends AppCompatActivity implements NavigationView.OnN
 
     RecyclerView RV_1;
     TextView TAmount;
-    int overAllTotalPrice;
+//    int overAllTotalPrice;
 
     DrawerLayout drawer;
     NavigationView navigationView;
     Toolbar toolbar;
 
-    MainAdapter mainAdapter;
+    PurchasesAdaptor purchasesAdapter;
 
 
     @Override
@@ -52,20 +52,20 @@ public class myPurchases extends AppCompatActivity implements NavigationView.OnN
 
         TAmount = findViewById(R.id.total_amount);
 
-        FirebaseRecyclerOptions<purchases> options =
-                new FirebaseRecyclerOptions.Builder<purchases>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("myPurchases"), purchases.class)
+        FirebaseRecyclerOptions<FoodCart> options =
+                new FirebaseRecyclerOptions.Builder<FoodCart>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Cart").child("C1"), FoodCart.class)
                         .build();
 
-        System.out.println("--------------------------------------------------------------");
-
-        mainAdapter = new MainAdapter(options);
 
 
-        RV_1.setAdapter(mainAdapter);
+        purchasesAdapter = new PurchasesAdaptor(options);
+
+
+        RV_1.setAdapter(purchasesAdapter);
 
         LocalBroadcastManager.getInstance(this)
-                .registerReceiver(mMessageReceiver, new IntentFilter("Total Spending"));
+                .registerReceiver(mMessageReceiver, new IntentFilter("Total Amount"));
 
         drawer = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar);
@@ -92,7 +92,7 @@ public class myPurchases extends AppCompatActivity implements NavigationView.OnN
     protected void onStart() {
         super.onStart();
 
-        mainAdapter.startListening();
+        purchasesAdapter.startListening();
 
 
     }
@@ -100,15 +100,15 @@ public class myPurchases extends AppCompatActivity implements NavigationView.OnN
     @Override
     protected void onStop() {
         super.onStop();
-        mainAdapter.stopListening();
+        purchasesAdapter.stopListening();
     }
 
     public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            int TotalPrice = intent.getIntExtra("TotalPrice",0);
-            TAmount.setText("LKR. "+TotalPrice+".00");
+            int Total = intent.getIntExtra("TotalPrice",0);
+            TAmount.setText("LKR. "+Total+".00");
         }
     };
 

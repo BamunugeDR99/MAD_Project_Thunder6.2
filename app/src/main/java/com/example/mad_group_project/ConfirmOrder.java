@@ -1,5 +1,7 @@
 package com.example.mad_group_project;
 
+import static java.lang.String.valueOf;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -13,6 +15,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -22,7 +25,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ConfirmOrder extends AppCompatActivity {
 
     RecyclerView RV;
-    TextView TAmount;
+    TextView TAmount,Type,Number;
+
+
+
+    String type, number, positionS,name;
 //    int overAllTotalPrice;
 
     ConfirmAdaptor confirmAdaptor;
@@ -32,12 +39,26 @@ public class ConfirmOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_order);
 
+
+
         //Assigning recycler view
         RV= (RecyclerView)findViewById(R.id.rv3);
 
         RV.setLayoutManager(new LinearLayoutManager(this));
 
         TAmount = findViewById(R.id.total_amount);
+        Type=findViewById(R.id.card_type);
+        Number=findViewById(R.id.card_number);
+
+        Intent intent = getIntent();
+
+        type = getIntent().getStringExtra("Type");
+        number = getIntent().getStringExtra("Number");
+        positionS = getIntent().getStringExtra("Position");
+
+        Type.setText(type);
+        Number.setText(number);
+
 
         FirebaseRecyclerOptions<FoodCart> options =
                 new FirebaseRecyclerOptions.Builder<FoodCart>()
