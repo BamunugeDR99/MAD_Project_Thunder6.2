@@ -78,12 +78,11 @@ public class edit_cart extends AppCompatActivity implements NavigationView.OnNav
 
         foodCartAdapter = new FoodCartAdapter(options);
         recyclerView.setAdapter(foodCartAdapter);
-//
-//        LocalBroadcastManager.getInstance(this)
-//                .registerReceiver(mMessageReceiver, new IntentFilter("Total Spending"));
 
-//        int OverAllTotalPrice = getIntent().getIntExtra("OverAllTotalPrice",0);
-//        TAmount.setText("LKR"+OverAllTotalPrice+".00");
+
+        LocalBroadcastManager.getInstance(this)
+                .registerReceiver(mMessageReceiver, new IntentFilter("Total Spending"));
+
     }
 
     @Override
@@ -97,6 +96,28 @@ public class edit_cart extends AppCompatActivity implements NavigationView.OnNav
         super.onStop();
         foodCartAdapter.startListening();
     }
+
+
+
+
+
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            int TotalPrice = intent.getIntExtra("TotalPrice",0);
+            TAmount.setText("LKR. "+TotalPrice+".00");
+        }
+    };
+
+
+
+
+
+
+
+
+
 
     @Override
     public void onBackPressed() {
