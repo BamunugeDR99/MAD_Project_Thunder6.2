@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
@@ -15,10 +16,14 @@ public class myPurchases extends AppCompatActivity {
     RecyclerView RV_1;
 
     MainAdapter mainAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_purchases);
+
+
 
         //Assigning recycler view
         RV_1= (RecyclerView)findViewById(R.id.RV_1);

@@ -3,9 +3,13 @@ package com.example.mad_group_project;
 public class purchases {
 
     private String name;
-    private Long price;
+    private String price;
     private String date;
     private String img;
+
+    private Double Total;
+
+    private Double TotalSpending;
 
     public purchases() {
     }
@@ -18,11 +22,11 @@ public class purchases {
         this.name = name;
     }
 
-    public Long getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -41,4 +45,6 @@ public class purchases {
     public void setImg(String img) {
         this.img = img;
     }
+
+
 }

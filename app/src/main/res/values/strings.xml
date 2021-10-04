@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MAD_Group_Project</string>
+    <string name="app_name">My Purchases</string>
     <string name="title_activity_contactus">contactus</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -15,4 +15,10 @@
     <string name="Text_111" />
     <string name="ItemPricw">Item Price</string>
     <string name="Date">Purchased Date</string>
+    <string name="TotalText">Tortal Spending</string>
+    <string name="TotalAmountText">Amount</string>
+
+    <string name="invalid_name">This field cannot be empty!</string>
+    <string name="invalid_number">Please enter a valid Card Number!</string>
+    <string name="invalid_date">This field cannot be empty!</string>
 </resources>

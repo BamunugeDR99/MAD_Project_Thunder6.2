@@ -2,6 +2,11 @@ package com.example.mad_group_project;
 
 
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -21,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 //Used to main_item to recycler view
 public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.myViewHolder> {
 
-
+    private Float TotalSpending =0.0f;
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -38,7 +44,17 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
 
         holder.name.setText(model.getName());
         holder.price.setText("Rs." + model.getPrice().toString());
+        holder.price.setText("Rs. " + model.getPrice());
         holder.date.setText("Purchase on" + model.getDate());
+
+
+        TotalSpending = TotalSpending + Float.parseFloat(model.getPrice());
+//        Log.i("a",String.valueOf(TotaleSpending));
+
+        holder.TotalSpending.setText(String.valueOf(TotalSpending));
+
+
+
 
 
         Glide.with(holder.img.getContext())
@@ -58,13 +74,16 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         //Bind myViewHolder & return it
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_item, parent, false);
         return new myViewHolder(view);
+
     }
+
+
 
     class myViewHolder extends RecyclerView.ViewHolder{
         ///////////////////////
         //CircleImageView img;
         ImageView img;
-        TextView name,price,date;
+        TextView name,price,date,TotalSpending;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,9 +96,12 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
             name = (TextView)itemView.findViewById(R.id.nametext);
             price = (TextView)itemView.findViewById(R.id.pricetext);
             date = (TextView)itemView.findViewById(R.id.datetext);
+            TotalSpending = (TextView) itemView.findViewById(R.id.TotalAmountText);
+
 
         }
     }
+
 
 
 }

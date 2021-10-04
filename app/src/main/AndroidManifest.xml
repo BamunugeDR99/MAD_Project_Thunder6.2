@@ -12,19 +12,21 @@
         <activity
             android:name=".myPurchases"
             android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".Add_New_Payment"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".View_card"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".Add_New_Payment"
-            android:exported="true" />
-        <activity
-            android:name=".View_card"
-            android:exported="true">
-
         </activity>
         <activity
             android:name=".registration"
