@@ -53,7 +53,7 @@ public class ViewCardAdapter extends FirebaseRecyclerAdapter<CardModel, ViewCard
                 Builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("Card Details")
+                        FirebaseDatabase.getInstance().getReference().child("Card Details").child("Cus1")
                                 .child(getRef(position).getKey()).removeValue();
                     }
                 });

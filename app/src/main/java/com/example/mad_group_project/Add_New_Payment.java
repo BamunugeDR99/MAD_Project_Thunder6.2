@@ -8,6 +8,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,6 +24,9 @@ public class Add_New_Payment extends AppCompatActivity {
     private RadioButton radioButton;
     EditText AC_Card_Owner,AC_Card_Number,AC_Card_Date;
     Button AC_BTN_Submit;
+    AwesomeValidation awesomeValidation;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,18 +36,63 @@ public class Add_New_Payment extends AppCompatActivity {
         AC_Card_Number=(EditText) findViewById(R.id.AC_Card_Number);
         AC_Card_Date=(EditText) findViewById(R.id.AC_Card_Date);
         AC_BTN_Submit=(Button) findViewById(R.id.AC_BTN_Submit);
+
+
+
+        //Initialize Validation Style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+
+        //Validate AC_Card_Number
+        awesomeValidation.addValidation(this,R.id.AC_Card_Number,
+                "[0-9]{16}$",R.string.invalid_number);
+        //Validate AC_Card_Owner
+        awesomeValidation.addValidation(this,R.id.AC_Card_Owner,
+                RegexTemplate.NOT_EMPTY,R.string.invalid_name2);
+        //Validate AC_Card_Date
+        awesomeValidation.addValidation(this,R.id.AC_Card_Date,
+                RegexTemplate.NOT_EMPTY,R.string.invalid_date);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         AC_BTN_Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
 
+                //Check Validation
+                if (awesomeValidation.validate()) {
+                    //On Success
+                    Toast.makeText(getApplicationContext(), "Data Validated Successfully!!",Toast.LENGTH_SHORT).show();
 
-                // get selected radio button from radioGroup
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                // find the radiobutton by returned id
-                radioButton = (RadioButton) findViewById(selectedId);
-                insertData();
+                    // get selected radio button from radioGroup
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    // find the radiobutton by returned id
+                    radioButton = (RadioButton) findViewById(selectedId);
+
+                    insertData();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Data Validation Failed!!",Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
+
+
             }
         });
     }

@@ -131,7 +131,9 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                         intent.putExtra("Image", model.getImage());
                         intent.putExtra("ItemName", model.getItemName());
 
-      holder.img.getContext().startActivity(intent);
+                    holder.img.getContext().startActivity(intent);
+
+
 
                         Log.d("Button Message", "Ebuwa");
 
