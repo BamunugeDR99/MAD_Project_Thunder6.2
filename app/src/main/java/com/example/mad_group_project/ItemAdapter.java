@@ -222,6 +222,8 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                         map.put("price", model.getPrice());
                         map.put("description", model.getDescription());
                         map.put("foodImage",model.getImage());
+                        map.put("quantity", "1");
+                        map.put("finalPrice", model.getPrice());
 
                         Log.d("Map", map.toString());
 
