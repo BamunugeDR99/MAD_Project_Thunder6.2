@@ -78,7 +78,7 @@ public class edit_cart extends AppCompatActivity implements NavigationView.OnNav
 
         foodCartAdapter = new FoodCartAdapter(options);
         recyclerView.setAdapter(foodCartAdapter);
-//
+
 //        LocalBroadcastManager.getInstance(this)
 //                .registerReceiver(mMessageReceiver, new IntentFilter("Total Spending"));
 
@@ -152,8 +152,8 @@ public class edit_cart extends AppCompatActivity implements NavigationView.OnNav
 //        @Override
 //        public void onReceive(Context context, Intent intent) {
 //
-//            int OverAllTotalPrice = intent.getIntExtra("Total Amount",0);
-//            TAmount.setText("LKR. "+OverAllTotalPrice+".00");
+//            int TotalPrice = intent.getIntExtra("Total Spending",0);
+//            TAmount.setText("LKR. "+TotalPrice+".00");
 ////
 //        }
 //    };

@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.LiveData;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -61,14 +62,16 @@ public class FoodCartAdapter extends FirebaseRecyclerAdapter<FoodCart, FoodCartA
                 .error(R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.food_image);
 
-        //// Calc Total Amount
-//
-//        TotalPrice = (Integer.valueOf(model.getPrice())) * Integer.valueOf(String.valueOf(holder.quantitys));
-//        OverAllTotalPrice = OverAllTotalPrice + TotalPrice;
 
-//        Intent intent = new Intent(holder.price.getContext(), edit_cart.class);
-//        intent.putExtra("TotalPrice",OverAllTotalPrice);
-////
+
+
+
+
+        // Calc Total Amount
+//        TotalPrice = Integer.parseInt(TotalPrice+ model.getFinalPrice());
+//        Intent intent = new Intent("Total Spending");
+//        intent.putExtra("TotalPrice",TotalPrice);
+//
 //        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
  //////////////
 
@@ -167,6 +170,9 @@ public class FoodCartAdapter extends FirebaseRecyclerAdapter<FoodCart, FoodCartA
 
     }
 });
+
+
+
 
 
         holder.btn_delete.setOnClickListener(new View.OnClickListener() {
