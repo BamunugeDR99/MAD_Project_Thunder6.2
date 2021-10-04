@@ -75,7 +75,7 @@ public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAda
 
         ImageView img;
         TextView name,price,quantity;
-//        Button confirm;
+//        Button confirm, cancel;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
