@@ -19,6 +19,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
+
 public class Add_New_Payment extends AppCompatActivity {
 
 
@@ -26,6 +30,8 @@ public class Add_New_Payment extends AppCompatActivity {
     private RadioButton radioButton;
     EditText AC_Card_Owner,AC_Card_Number,AC_Card_Date;
     Button AC_BTN_Submit;
+
+    AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +47,35 @@ public class Add_New_Payment extends AppCompatActivity {
 
         AC_BTN_Submit=(Button) findViewById(R.id.AC_BTN_Submit);
 
+        //Initialize Validation Style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+
+        //Validate AC_Card_Number
+        awesomeValidation.addValidation(this,R.id.AC_Card_Number,
+                "[0-9]{16}$",R.string.invalid_number);
+        //Validate AC_Card_Owner
+        awesomeValidation.addValidation(this,R.id.AC_Card_Owner,
+                RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        //Validate AC_Card_Date
+        awesomeValidation.addValidation(this,R.id.AC_Card_Date,
+                RegexTemplate.NOT_EMPTY,R.string.invalid_date);
+
+
         AC_BTN_Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Check Validation
+                if (awesomeValidation.validate()) {
+                    //On Success
+                    Toast.makeText(getApplicationContext(), "Data Validated Successfully!!",Toast.LENGTH_SHORT).show();
+                    insertData();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Data Validation Failed!!",Toast.LENGTH_SHORT).show();
+                }
+
 
 
 

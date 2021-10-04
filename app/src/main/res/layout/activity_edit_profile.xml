@@ -114,7 +114,7 @@
                     android:layout_width="319dp"
                     android:layout_height="52dp"
                     android:layout_weight="1"
-                    android:ems="10"
+                    android:ems="5"
                     android:inputType="textEmailAddress"
                     tools:ignore="SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -142,7 +142,7 @@
                     android:layout_width="319dp"
                     android:layout_height="52dp"
                     android:layout_weight="1"
-                    android:ems="10"
+                    android:ems="5"
                     android:inputType="numberDecimal"
                     tools:ignore="SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -184,7 +184,7 @@
                     android:layout_width="319dp"
                     android:layout_height="52dp"
                     android:layout_weight="1"
-                    android:ems="10"
+                    android:ems="5"
                     android:inputType="textPassword"
                     tools:ignore="SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -212,7 +212,7 @@
                     android:layout_width="319dp"
                     android:layout_height="52dp"
                     android:layout_weight="1"
-                    android:ems="10"
+                    android:ems="5"
                     android:inputType="textPassword"
                     tools:ignore="SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -240,7 +240,7 @@
                     android:layout_width="319dp"
                     android:layout_height="52dp"
                     android:layout_weight="1"
-                    android:ems="10"
+                    android:ems="5"
                     android:inputType="textPassword"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -278,7 +278,7 @@
                 android:id="@+id/layout_edit_ln"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="319dp"
-                android:layout_height="57dp"
+                android:layout_height="58dp"
                 android:hint="Last Name"
                 app:boxCornerRadiusBottomEnd="5dp"
                 app:boxCornerRadiusBottomStart="5dp"
@@ -296,9 +296,9 @@
                 <EditText
                     android:id="@+id/edit_ln"
                     android:layout_width="319dp"
-                    android:layout_height="48dp"
+                    android:layout_height="52dp"
                     android:layout_weight="1"
-                    android:ems="10"
+                    android:ems="5"
                     android:inputType="textPersonName"
                     tools:ignore="SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -307,7 +307,7 @@
                 android:id="@+id/layout_edit_add"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="319dp"
-                android:layout_height="57dp"
+                android:layout_height="58dp"
                 android:hint="Address"
                 app:boxCornerRadiusBottomEnd="5dp"
                 app:boxCornerRadiusBottomStart="5dp"
@@ -324,7 +324,7 @@
                 <EditText
                     android:id="@+id/edit_add"
                     android:layout_width="319dp"
-                    android:layout_height="48dp"
+                    android:layout_height="52dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPostalAddress"

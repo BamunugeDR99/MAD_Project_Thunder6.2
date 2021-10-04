@@ -74,7 +74,9 @@ public class edit_profile extends AppCompatActivity {
         image_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+//                finish();
+                Intent intent = new Intent(edit_profile.this, user_profile.class);
+                startActivity(intent);
             }
         });
 
