@@ -64,23 +64,20 @@ public class FoodCartAdapter extends FirebaseRecyclerAdapter<FoodCart, FoodCartA
 
 
 
+        //// Calc Total Amount
+        TotalPrice =  TotalPrice + (Integer.parseInt(model.getPrice()) * Integer.parseInt(model.getQuantity()));
+        Log.d("Total Price", String.valueOf(TotalPrice));
+        Intent intent = new Intent("Total Spending");
+        intent.putExtra("TotalPrice",TotalPrice);
+
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 
 
 
-        // Calc Total Amount
-//        TotalPrice = Integer.parseInt(TotalPrice+ model.getFinalPrice());
-//        Intent intent = new Intent("Total Spending");
-//        intent.putExtra("TotalPrice",TotalPrice);
-//
-//        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
- //////////////
 
-//        TotalPrice = (Integer.valueOf(model.getPrice())) * Integer.valueOf(String.valueOf(holder.quantitys));
-//        OverAllTotalPrice = OverAllTotalPrice + TotalPrice;
-//        Intent intent = new Intent(holder.price.getContext(), edit_cart.class);
-//        intent.putExtra("OverAllTotalPrice",String.valueOf(OverAllTotalPrice));
-//
-//        holder.price.getContext().startActivity(intent);
+
+
+
 
 
         holder.quantitys.setText(model.getQuantity());

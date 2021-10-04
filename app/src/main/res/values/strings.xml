@@ -1,7 +1,9 @@
 <resources>
 
 
+
     <string name="app_name">Sunset Gifts</string>
+
 
 
     <string name="title_activity_contactus">contactus</string>
@@ -28,6 +30,14 @@
     <string name="Text_111" />
     <string name="ItemPricw">Item Price</string>
     <string name="Date">Purchased Date</string>
+
+    <string name="TotalText">Tortal Spending</string>
+    <string name="TotalAmountText">Amount</string>
+
+<!--    <string name="invalid_name">This field cannot be empty!</string>-->
+    <string name="invalid_number">Please enter a valid Card Number!</string>
+    <string name="invalid_date">This field cannot be empty!</string>
+
     <string name="PriceView">Price</string>
     <string name="ProductName">ProductName</string>
     <string name="RateNo">NoOfRatings</string>

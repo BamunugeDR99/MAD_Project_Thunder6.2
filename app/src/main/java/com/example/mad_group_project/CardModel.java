@@ -3,8 +3,17 @@ package com.example.mad_group_project;
 public class CardModel {
     private String image;
     private String name;
-    private Long number;
+    private String number;
     private String date;
+    private String CardType;
+
+    public String getCardType() {
+        return CardType;
+    }
+
+    public void setCardType(String cardType) {
+        CardType = cardType;
+    }
 
     public CardModel() {
     }
@@ -25,11 +34,11 @@ public class CardModel {
         this.name = name;
     }
 
-    public Long getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(Long number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

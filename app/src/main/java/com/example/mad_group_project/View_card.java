@@ -28,6 +28,8 @@ public class View_card extends AppCompatActivity {
         //Assigning recycler view
         RV_3= (RecyclerView)findViewById(R.id.RV_3);
 
+        RV_3.setItemAnimator(null);
+
         RV_3.setLayoutManager(new LinearLayoutManager(this));
 
         AC_FL_BTN=(FloatingActionButton) findViewById(R.id.AC_FL_BTN);
@@ -38,7 +40,7 @@ public class View_card extends AppCompatActivity {
 
         FirebaseRecyclerOptions<CardModel> options =
                 new FirebaseRecyclerOptions.Builder<CardModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Card Details"), CardModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Card Details").child("Cus1"), CardModel.class)
                         .build();
 
 

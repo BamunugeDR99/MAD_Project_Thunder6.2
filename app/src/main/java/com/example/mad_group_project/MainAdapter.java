@@ -2,8 +2,16 @@ package com.example.mad_group_project;
 
 
 
+
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.util.Log;
+
+import android.content.Context;
+import android.content.Intent;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +32,12 @@ import org.jetbrains.annotations.NotNull;
 //Used to main_item to recycler view
 public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.myViewHolder> {
 
+
+    private Float TotalSpending =0.0f;
+
     int TotalPrice =0;
     Context context;
+
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -43,14 +55,24 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
 
         holder.name.setText(model.getName());
         holder.price.setText("Rs." + model.getPrice().toString());
+        holder.price.setText("Rs. " + model.getPrice());
         holder.date.setText("Purchase on" + model.getDate());
 
         //// Calc Total Amount
-        TotalPrice = (int) (TotalPrice + model.getPrice());
+        TotalPrice = TotalPrice+ Integer.parseInt(model.getPrice());
         Intent intent = new Intent("Total Spending");
         intent.putExtra("TotalPrice",TotalPrice);
 
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
+
+
+        TotalSpending = TotalSpending + Float.parseFloat(model.getPrice());
+//        Log.i("a",String.valueOf(TotaleSpending));
+
+        holder.TotalSpending.setText(String.valueOf(TotalSpending));
+
+
 
 
 
@@ -71,13 +93,16 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         //Bind myViewHolder & return it
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_item, parent, false);
         return new myViewHolder(view);
+
     }
+
+
 
     class myViewHolder extends RecyclerView.ViewHolder{
         ///////////////////////
         //CircleImageView img;
         ImageView img;
-        TextView name,price,date;
+        TextView name,price,date,TotalSpending;
 
 
         public myViewHolder(@NonNull View itemView) {
@@ -91,9 +116,12 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
             name = (TextView)itemView.findViewById(R.id.nametext);
             price = (TextView)itemView.findViewById(R.id.pricetext);
             date = (TextView)itemView.findViewById(R.id.datetext);
+//            TotalSpending = (TextView) itemView.findViewById(R.id.TotalAmountText);
+
 
         }
     }
+
 
 
 }

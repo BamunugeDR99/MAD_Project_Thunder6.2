@@ -47,8 +47,8 @@ public class ViewCardAdapter extends FirebaseRecyclerAdapter<CardModel, ViewCard
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder Builder = new AlertDialog.Builder(holder.itemView.getContext());
-                Builder.setTitle("are You sure");
-                Builder.setMessage("Deleted data can't be Undo");
+                Builder.setTitle("Are You Sure");
+                Builder.setMessage("Your card will be Deleted");
 
                 Builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
