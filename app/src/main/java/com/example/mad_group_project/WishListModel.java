@@ -6,6 +6,7 @@ public class WishListModel {
     private String Ratings;
     private String Reviews;
     private String imgurl;
+    private String description;
 
 
     public WishListModel() {
@@ -57,5 +58,13 @@ public class WishListModel {
 
     public void setImgurl(String imgurl) {
         this.imgurl = imgurl;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
