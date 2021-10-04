@@ -28,6 +28,9 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class FoodCartAdapter extends FirebaseRecyclerAdapter<FoodCart, FoodCartAdapter.myViewHolder> {
 
@@ -50,7 +53,7 @@ public class FoodCartAdapter extends FirebaseRecyclerAdapter<FoodCart, FoodCartA
 
         holder.name.setText(model.getName());
         holder.description.setText(model.getDescription());
-        holder.price.setText(model.getPrice());
+        holder.price.setText(model.getFinalPrice());
 
         Glide.with(holder.food_image.getContext())
                 .load(model.getFoodImage())
@@ -77,7 +80,10 @@ public class FoodCartAdapter extends FirebaseRecyclerAdapter<FoodCart, FoodCartA
 //        holder.price.getContext().startActivity(intent);
 
 
-        holder.quantitys.setText("1");
+        holder.quantitys.setText(model.getQuantity());
+
+
+
         holder.increment.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
@@ -86,6 +92,41 @@ public class FoodCartAdapter extends FirebaseRecyclerAdapter<FoodCart, FoodCartA
               Integer newPrice = Integer.parseInt(model.getPrice())  * number;
               holder.quantitys.setText(String.valueOf(number));
               holder.price.setText(String.valueOf(newPrice));
+
+
+
+
+
+              Map<String, Object> map = new HashMap<>();
+
+
+              map.put("name",model.getName() );
+              map.put("price", model.getPrice());
+              map.put("description", model.getDescription());
+              map.put("foodImage",model.getFoodImage());
+              map.put("quantity", String.valueOf(number));
+              map.put("finalPrice", String.valueOf(Integer.parseInt(model.getPrice()) * number));
+
+              Log.d("Map", map.toString());
+
+              FirebaseDatabase.getInstance().getReference().child("Cart").child("C1")
+                       .child(getRef(position).getKey()).updateChildren(map);
+
+
+
+              holder.price.setText(String.valueOf(newPrice));
+
+
+
+
+
+
+
+
+
+
+
+
           }
       });
 
@@ -102,6 +143,27 @@ public class FoodCartAdapter extends FirebaseRecyclerAdapter<FoodCart, FoodCartA
         Integer newPrice = Integer.parseInt(model.getPrice())  * number;
         holder.quantitys.setText(String.valueOf(number));
         holder.price.setText(String.valueOf(newPrice));
+
+
+
+        Map<String, Object> map = new HashMap<>();
+
+
+        map.put("name",model.getName() );
+        map.put("price", model.getPrice());
+        map.put("description", model.getDescription());
+        map.put("foodImage",model.getFoodImage());
+        map.put("quantity", String.valueOf(number));
+        map.put("finalPrice", String.valueOf(Integer.parseInt(model.getPrice()) * number));
+
+        Log.d("Map", map.toString());
+
+        FirebaseDatabase.getInstance().getReference().child("Cart").child("C1")
+                .child(getRef(position).getKey()).updateChildren(map);
+
+
+        holder.price.setText(String.valueOf(newPrice));
+        holder.price.setText(model.getFinalPrice());
 
     }
 });

@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 
 //import de.hdodenhof.circleimageview.CircleImageView;
 //Used to main_item to recycler view
-public class ConfirmAdaptor extends FirebaseRecyclerAdapter<ConfirmOrderModel, ConfirmAdaptor.myViewHolder> {
+public class ConfirmAdaptor extends FirebaseRecyclerAdapter<FoodCart, ConfirmAdaptor.myViewHolder> {
 
 //    int TotalPrice =0;
 //    Context context;
@@ -35,19 +35,17 @@ public class ConfirmAdaptor extends FirebaseRecyclerAdapter<ConfirmOrderModel, C
      *
      * @param options
      */
-    public ConfirmAdaptor(@NonNull @NotNull FirebaseRecyclerOptions<ConfirmOrderModel> options) {
+    public ConfirmAdaptor(@NonNull @NotNull FirebaseRecyclerOptions<FoodCart> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position, @NonNull @NotNull ConfirmOrderModel model) {
+    protected void onBindViewHolder(@NonNull @NotNull myViewHolder holder, int position, @NonNull @NotNull FoodCart model) {
 
-        holder.name.setText(model.getItemName());
+        holder.name.setText(model.getName());
         holder.price.setText("Rs." +model.getPrice().toString());
         holder.quantity.setText(model.getQuantity().toString());
 
-        Log.d("itemname",model.getItemName());
-        //// Calc Total Amount
 //        TotalPrice = (int) (TotalPrice + model.getPrice());
 //        Intent intent = new Intent("Total Spending");
 //        intent.putExtra("TotalPrice",TotalPrice);
@@ -56,7 +54,7 @@ public class ConfirmAdaptor extends FirebaseRecyclerAdapter<ConfirmOrderModel, C
 
 
         Glide.with(holder.img.getContext())
-                .load(model.getImage())
+                .load(model.getFoodImage())
                 .placeholder(R.drawable.common_google_signin_btn_icon_dark)
                 .error(R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
