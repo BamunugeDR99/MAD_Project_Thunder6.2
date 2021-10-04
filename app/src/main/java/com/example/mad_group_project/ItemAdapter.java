@@ -1,11 +1,13 @@
 package com.example.mad_group_project;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -75,6 +77,8 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                 ImageView imgI ;
 
                 TextView price, productName, ratings, description ;
+
+                Button AddtoCart = (Button)view.findViewById(R.id.CartBtn) ;
 
                 price = view.findViewById(R.id.PriceView);
                 productName = view.findViewById(R.id.Name);
@@ -154,6 +158,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                         map.put("Ratings", model.getRatings());
                         map.put("Reviews", "120");
                         map.put("imgurl",model.getImage());
+                        map.put("description",model.getDescription());
 
                         Log.d("Map", map.toString());
 
@@ -163,8 +168,14 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                                     @Override
                                     public void onSuccess(Void unused) {
 
+
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.Itemname.getContext());
+                                        builder.setTitle("Success");
+                                        builder.setMessage("This item will be Added from your wishlist");
+
                                         Toast.makeText(holder.itemCard.getContext(), "Item Added To Wish List Successfully !", Toast.LENGTH_SHORT);
 
+                                        builder.show();
 
                                     }
                                 })
@@ -173,8 +184,120 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<ItemModel, ItemAdapter.
                                     public void onFailure( Exception e) {
 
                                         Toast.makeText(holder.Itemname.getContext(),"Oops Error Occured !", Toast.LENGTH_SHORT);
+
+
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.Itemname.getContext());
+                                        builder.setTitle("Error");
+                                        builder.setMessage("Oops Something is wrong! Try again later !");
+
+
+
+                                        builder.show();
+
                                     }
                                 });
+
+
+
+
+
+                    }
+                });
+
+
+
+
+                AddtoCart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Log.d("Cart Message", "Go to  Cart");
+
+
+
+                        Map<String, Object> map = new HashMap<>();
+
+
+                        map.put("name",model.getItemName() );
+                        map.put("price", model.getPrice());
+                        map.put("description", model.getDescription());
+                        map.put("foodImage",model.getImage());
+
+                        Log.d("Map", map.toString());
+
+                        FirebaseDatabase.getInstance().getReference().child("Cart").child("C1").push()
+                                .setValue(map)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+
+
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.Itemname.getContext());
+                                        builder.setTitle("Success");
+                                        builder.setMessage("Item is Added to Your Cart");
+
+                                        Toast.makeText(holder.itemCard.getContext(), "Item Added To Wish List Successfully !", Toast.LENGTH_SHORT);
+
+                                        builder.show();
+
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure( Exception e) {
+
+                                        Toast.makeText(holder.Itemname.getContext(),"Oops Error Occured !", Toast.LENGTH_SHORT);
+
+
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(holder.Itemname.getContext());
+                                        builder.setTitle("Error");
+                                        builder.setMessage("Oops Something is wrong! Try again later !");
+
+
+
+                                        builder.show();
+
+                                    }
+                                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
