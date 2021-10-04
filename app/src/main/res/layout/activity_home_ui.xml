@@ -27,35 +27,32 @@
 <!--            android:elevation="4dp"/>-->
 
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".HomeUI">
 
             <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/purple_500"
-                android:id="@+id/toolbar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 android:elevation="4dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 tools:ignore="MissingConstraints" />
 
-<!--                <androidx.appcompat.widget.Toolbar-->
-<!--                    android:id="@+id/toolbar2"-->
-<!--                    android:layout_width="418dp"-->
-<!--                    android:layout_height="100dp"-->
-<!--                    android:background="#9969C8"-->
-<!--                    android:minHeight="?attr/actionBarSize"-->
-<!--                    android:theme="?attr/actionBarTheme"-->
-<!--                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintHorizontal_bias="0.571"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+            <!--                <androidx.appcompat.widget.Toolbar-->
+            <!--                    android:id="@+id/toolbar2"-->
+            <!--                    android:layout_width="418dp"-->
+            <!--                    android:layout_height="100dp"-->
+            <!--                    android:background="#9969C8"-->
+            <!--                    android:minHeight="?attr/actionBarSize"-->
+            <!--                    android:theme="?attr/actionBarTheme"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@+id/toolbar"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintHorizontal_bias="0.571"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
 
             <TextView
@@ -72,22 +69,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <SearchView-->
-<!--                android:id="@+id/searchView"-->
-<!--                android:layout_width="368dp"-->
-<!--                android:layout_height="44dp"-->
+            <!--            <SearchView-->
+            <!--                android:id="@+id/searchView"-->
+            <!--                android:layout_width="368dp"-->
+            <!--                android:layout_height="44dp"-->
 
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:background="@drawable/searchbar_border"-->
-<!--                android:iconifiedByDefault="false"-->
-<!--                android:padding="5dp"-->
-<!--                android:queryHint="Search"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/toolbar"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.488"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/headTag"-->
-<!--                app:layout_constraintVertical_bias="0.538" />-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:background="@drawable/searchbar_border"-->
+            <!--                android:iconifiedByDefault="false"-->
+            <!--                android:padding="5dp"-->
+            <!--                android:queryHint="Search"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/toolbar"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintHorizontal_bias="0.488"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/headTag"-->
+            <!--                app:layout_constraintVertical_bias="0.538" />-->
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -142,7 +139,7 @@
                 android:layout_marginLeft="36dp"
                 app:cardElevation="25dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/heading2" >
+                app:layout_constraintTop_toBottomOf="@+id/heading2">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -191,12 +188,12 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="36dp"
-                app:cardElevation="25dp"
                 android:layout_marginLeft="36dp"
+                app:cardElevation="25dp"
                 app:layout_constraintBottom_toTopOf="@+id/Trending"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CakeCard"
-                app:layout_constraintVertical_bias="0.481" >
+                app:layout_constraintVertical_bias="0.481">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -245,11 +242,11 @@
                 android:layout_width="206dp"
                 android:layout_height="84dp"
                 android:layout_marginTop="4dp"
+                app:cardElevation="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.483"
-                app:cardElevation="25dp"
                 app:layout_constraintStart_toEndOf="@+id/CakeCard"
-                app:layout_constraintTop_toBottomOf="@+id/heading2" >
+                app:layout_constraintTop_toBottomOf="@+id/heading2">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -299,10 +296,10 @@
                 android:layout_width="206dp"
                 android:layout_height="86dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:cardElevation="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/CakeCard"
-                app:layout_constraintTop_toBottomOf="@+id/FlowersCard" >
+                app:layout_constraintTop_toBottomOf="@+id/FlowersCard">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -404,8 +401,325 @@
             </androidx.cardview.widget.CardView>
 
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="129dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                app:cardElevation="45dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Trending">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="192dp">
+
+                    <ImageView
+                        android:id="@+id/imageView99"
+                        android:layout_width="113dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginRight="6dp"
+                        app:srcCompat="@drawable/cake2" />
+
+                    <TextView
+                        android:id="@+id/itemname11"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageView99"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="Chocolate Fudge Cake"
+                        android:textColor="#151515"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView91"
+                        android:layout_width="22dp"
+                        android:layout_height="25dp"
+                        android:layout_below="@+id/itemname11"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="73dp"
+                        android:layout_marginRight="73dp"
+                        android:layout_toEndOf="@+id/ratingNo1"
+                        android:layout_toRightOf="@+id/ratingNo1"
+                        app:srcCompat="@drawable/ic_ratestar"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/ratingNo1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/itemname11"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="5dp"
+                        android:text="3.2"
+                        android:textColor="#0E0E0E"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/price11"
+                        android:layout_width="57dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/ratingNo1"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="58dp"
+                        android:layout_marginRight="58dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Rs.3000"
+                        android:textColor="#FF9800"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
 
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="129dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="270dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="8dp"
+                app:cardElevation="45dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Trending">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="192dp">
+
+                    <ImageView
+                        android:id="@+id/imageView77"
+                        android:layout_width="113dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginRight="6dp"
+                        app:srcCompat="@drawable/watch" />
+
+                    <TextView
+                        android:id="@+id/itemname13"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageView77"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="Rolex Couple Chain Watches"
+                        android:textColor="#151515"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView93"
+                        android:layout_width="22dp"
+                        android:layout_height="25dp"
+                        android:layout_below="@+id/itemname13"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="73dp"
+                        android:layout_marginRight="73dp"
+                        android:layout_toEndOf="@+id/ratingNo3"
+                        android:layout_toRightOf="@+id/ratingNo3"
+                        app:srcCompat="@drawable/ic_ratestar"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/ratingNo3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/itemname13"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="5dp"
+                        android:text="3.8"
+                        android:textColor="#0E0E0E"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/price13"
+                        android:layout_width="57dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/ratingNo3"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="58dp"
+                        android:layout_marginRight="58dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Rs.18000"
+                        android:textColor="#FF9800"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="129dp"
+                android:layout_height="193dp"
+                android:layout_marginStart="136dp"
+                android:layout_marginLeft="136dp"
+                android:layout_marginTop="8dp"
+                app:cardElevation="45dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Trending">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="192dp">
+
+                    <ImageView
+                        android:id="@+id/imageView88"
+                        android:layout_width="113dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginRight="6dp"
+                        app:srcCompat="@drawable/chocolate2" />
+
+                    <TextView
+                        android:id="@+id/itemname12"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageView88"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="Cadbury Dairy Milk 200g"
+                        android:textColor="#151515"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView92"
+                        android:layout_width="22dp"
+                        android:layout_height="25dp"
+                        android:layout_below="@+id/itemname12"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="73dp"
+                        android:layout_marginRight="73dp"
+                        android:layout_toEndOf="@+id/ratingNo2"
+                        android:layout_toRightOf="@+id/ratingNo2"
+                        app:srcCompat="@drawable/ic_ratestar"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/ratingNo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/itemname12"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="5dp"
+                        android:text="4.7"
+                        android:textColor="#0E0E0E"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/price12"
+                        android:layout_width="58dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@+id/ratingNo2"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="59dp"
+                        android:layout_marginRight="59dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Rs.1500"
+                        android:textColor="#FF9800"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
 
 
