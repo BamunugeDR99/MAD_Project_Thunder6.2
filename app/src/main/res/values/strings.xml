@@ -34,7 +34,7 @@
     <string name="TotalText">Tortal Spending</string>
     <string name="TotalAmountText">Amount</string>
 
-    <string name="invalid_name">This field cannot be empty!</string>
+<!--    <string name="invalid_name">This field cannot be empty!</string>-->
     <string name="invalid_number">Please enter a valid Card Number!</string>
     <string name="invalid_date">This field cannot be empty!</string>
 

@@ -59,7 +59,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
         holder.date.setText("Purchase on" + model.getDate());
 
         //// Calc Total Amount
-        TotalPrice = (int) (TotalPrice + model.getPrice());
+        TotalPrice = TotalPrice+ Integer.parseInt(model.getPrice());
         Intent intent = new Intent("Total Spending");
         intent.putExtra("TotalPrice",TotalPrice);
 
@@ -116,7 +116,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<purchases, MainAdapter.
             name = (TextView)itemView.findViewById(R.id.nametext);
             price = (TextView)itemView.findViewById(R.id.pricetext);
             date = (TextView)itemView.findViewById(R.id.datetext);
-            TotalSpending = (TextView) itemView.findViewById(R.id.TotalAmountText);
+//            TotalSpending = (TextView) itemView.findViewById(R.id.TotalAmountText);
 
 
         }
