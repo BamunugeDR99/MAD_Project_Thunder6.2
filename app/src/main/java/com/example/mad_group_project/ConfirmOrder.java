@@ -21,6 +21,7 @@ import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class ConfirmOrder extends AppCompatActivity {
     TextView TAmount,Type,Number;
 
     Button confirm,cancel;
+    ImageButton image_btn;
 
     Context context;
 
@@ -47,7 +49,16 @@ public class ConfirmOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_order);
 
+        image_btn=(ImageButton) findViewById(R.id.imgbtn);
 
+        image_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+//                Intent intent = new Intent(write_review.this, customer_reviews.class);
+//                startActivity(intent);
+            }
+        });
 
         //Assigning recycler view
         RV= (RecyclerView)findViewById(R.id.rv3);

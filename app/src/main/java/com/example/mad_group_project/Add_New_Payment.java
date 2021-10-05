@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class Add_New_Payment extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     EditText AC_Card_Owner,AC_Card_Number,AC_Card_Date;
+    ImageButton image_btn;
     Button AC_BTN_Submit;
     AwesomeValidation awesomeValidation;
 
@@ -31,6 +33,18 @@ public class Add_New_Payment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_payment);
+
+        image_btn=(ImageButton) findViewById(R.id.imgbtn);
+
+        image_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+//                Intent intent = new Intent(write_review.this, customer_reviews.class);
+//                startActivity(intent);
+            }
+        });
+
         radioGroup = (RadioGroup) findViewById(R.id.RadioGroup);
         AC_Card_Owner=(EditText) findViewById(R.id.AC_Card_Owner);
         AC_Card_Number=(EditText) findViewById(R.id.AC_Card_Number);

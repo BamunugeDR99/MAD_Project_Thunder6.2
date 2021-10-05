@@ -226,7 +226,7 @@ public class sign_up_page extends AppCompatActivity {
                                                                Toast.makeText(sign_up_page.this, "User added", Toast.LENGTH_SHORT).show();
                                                                String ConfirmPassword = et_confirm_password.getText().toString();
 
-                                                               Intent intent = new Intent(sign_up_page.this,HomeUI.class);
+                                                               Intent intent = new Intent(sign_up_page.this,login.class);
                                                                startActivity(intent);
 
                                                                firstname.setText("");

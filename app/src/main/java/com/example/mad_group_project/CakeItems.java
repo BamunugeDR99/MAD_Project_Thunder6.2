@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -17,11 +19,23 @@ public class CakeItems extends AppCompatActivity {
     RecyclerView Item_rv;
     ItemAdapter itemAdapter;
 
+    ImageButton image_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cake_items);
+
+        image_btn=(ImageButton) findViewById(R.id.imgbtn);
+
+        image_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+//                Intent intent = new Intent(write_review.this, customer_reviews.class);
+//                startActivity(intent);
+            }
+        });
 
         RecyclerView.LayoutManager layoutManager;
 
