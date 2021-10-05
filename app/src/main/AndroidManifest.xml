@@ -26,7 +26,6 @@
             android:name=".HomeUI"
             android:exported="true">
 
-
         </activity>
 
 
