@@ -22,14 +22,13 @@
 
     <ImageButton
         android:id="@+id/imgbtn"
-        android:layout_width="115dp"
-        android:layout_height="37dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#9969C8"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@color/purple_500"
         android:elevation="4dp"
         android:paddingBottom="5dp"
